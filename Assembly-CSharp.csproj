@@ -51,8 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Asteroid.cs" />
-     <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -61,8 +59,17 @@
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-     <Compile Include="Assets\Shooting.cs" />
-     <Compile Include="Assets\SmallLaser.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\Asteroid.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\AudioManager.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\Fuel.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\Health.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\Player.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\Score.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\Shooting.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\SmallLaser.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\Sound.cs" />
+     <Compile Include="Assets\StarMiner\Scripts\Spawner.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />

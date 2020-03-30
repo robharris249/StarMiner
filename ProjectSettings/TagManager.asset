@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SmallLaser
+  - Asteroid
+  - Iron
+  - Gold
+  - Diamond
+  - Uranium
+  - Unknown
+  - Fuel
   layers:
   - Default
   - TransparentFX
