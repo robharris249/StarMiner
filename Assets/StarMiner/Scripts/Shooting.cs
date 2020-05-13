@@ -10,29 +10,33 @@ public class Shooting : MonoBehaviour {
 	public float bulletforce = 20f;
 
 	// Use this for initialization
-	void Start()
-	{
+	void Start() {
 		laserCooldown = 0;
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		laserCooldown -= Time.deltaTime;
-		if (laserCooldown < 0)
-		{
-			laserCooldown = 0;
-		}
+		if (Time.timeScale == 1) {
 
-		if (Input.GetKey(KeyCode.Space) && laserCooldown == 0) {
-			shoot();
-			laserCooldown = 0.5f;
-			FindObjectOfType<AudioManager>().Play("PlayerShootSmall");
+			laserCooldown -= Time.deltaTime;
+			if (laserCooldown < 0) {
+				laserCooldown = 0;
+			}
+
+			if (Input.GetKey(KeyCode.Space) && laserCooldown == 0) {
+				shoot();
+				if(FindObjectOfType<Player>().godMode) {
+					laserCooldown = 0.05f;
+				} else {
+					laserCooldown = 0.5f;
+				}
+				FindObjectOfType<AudioManager>().Play("PlayerShootSmall");
+			}
 		}
 	}
 
-	void shoot()
-    {
+	void shoot() {
 		Instantiate(smallLaserPrefab, firePoint.position, firePoint.rotation);
     }
 }

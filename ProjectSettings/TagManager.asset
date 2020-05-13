@@ -9,9 +9,9 @@ TagManager:
   - Iron
   - Gold
   - Diamond
-  - Uranium
   - Unknown
   - Fuel
+  - mysterousCrystal
   layers:
   - Default
   - TransparentFX

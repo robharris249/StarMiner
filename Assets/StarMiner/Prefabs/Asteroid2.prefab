@@ -77,7 +77,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.00094777346, y: 0.0066345334}
   serializedVersion: 2
-  m_Radius: 0.2568956
+  m_Radius: 0.22
 --- !u!114 &114004583967367494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,14 +90,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  explosion: {fileID: 1067600728885836, guid: 1b9003cf08343bb41bfda8f0ca97cb9c, type: 2}
-  Shattered: {fileID: 1814964338168342, guid: d531451096421d44ea56d43a50b06ec9, type: 2}
+  explosion: {fileID: 1746536894660092, guid: 10d62fed81872364eafd0f84952c611c, type: 2}
+  Shattered: {fileID: 1814964338168342, guid: cd2f9259c5c56054eb57965d14c6f0c8, type: 2}
   Iron: {fileID: 1417846891466788, guid: fdf00c822c4479f429b2ab1f954547a4, type: 2}
   Gold: {fileID: 1003751002376090, guid: 93a3f1208a09b02499db3c68816cc097, type: 2}
   Diamond: {fileID: 1898319199122514, guid: c1e8533ba7b5c244882fe06fa16d13e5, type: 2}
-  Uranium: {fileID: 1466109878915658, guid: 478bd3bc98eac9248bbebb178b3127cf, type: 2}
+  mysteriousCrystal: {fileID: 1017667039378880, guid: 4da9049a9bd88c14a844fd93c410f903,
+    type: 2}
   Unknown: {fileID: 1697413958704606, guid: 754bc72a1ea9a2d449b31b4ea9220c51, type: 2}
   Fuel: {fileID: 1905780524239338, guid: a91ad3318a835d74dba9575a1d41e07a, type: 2}
+  red0: {fileID: 21300000, guid: 84ef44fdde41838448765565210fb814, type: 3}
+  cracked1: {fileID: 21300000, guid: dc12fc188b14660428dbf0fa669d7f6c, type: 3}
+  crackedRed1: {fileID: 21300000, guid: 256755b328ad8de49a1f29a9372cf147, type: 3}
+  cracked2: {fileID: 21300000, guid: e382ad491e84dd0428c9b4846340b993, type: 3}
+  crackedRed2: {fileID: 21300000, guid: 37825bca5dc34e3458ca2a048a5496de, type: 3}
+  cracked3: {fileID: 21300000, guid: 9f94c64210497504eb2548ec6b54ddb3, type: 3}
+  crackedRed3: {fileID: 21300000, guid: 428861517068b2942af3ff4522294c62, type: 3}
   ironChance: 0
   goldChance: 0
   diamondChance: 0
@@ -138,7 +146,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 07574c75c962b22459f496de71a9b818, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c30aa8acee70c764184ff416086074a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -75,9 +75,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00094777346, y: 0.0066345334}
+  m_Offset: {x: -0.02, y: 0.0066345334}
   serializedVersion: 2
-  m_Radius: 0.2568956
+  m_Radius: 0.22
 --- !u!114 &114455843573192062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,14 +90,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  explosion: {fileID: 1067600728885836, guid: 1b9003cf08343bb41bfda8f0ca97cb9c, type: 2}
+  explosion: {fileID: 1484806982235560, guid: cc01e22fcc486cf4785540c5cbae1135, type: 2}
   Shattered: {fileID: 1814964338168342, guid: d531451096421d44ea56d43a50b06ec9, type: 2}
   Iron: {fileID: 1417846891466788, guid: fdf00c822c4479f429b2ab1f954547a4, type: 2}
   Gold: {fileID: 1003751002376090, guid: 93a3f1208a09b02499db3c68816cc097, type: 2}
   Diamond: {fileID: 1898319199122514, guid: c1e8533ba7b5c244882fe06fa16d13e5, type: 2}
-  Uranium: {fileID: 1466109878915658, guid: 478bd3bc98eac9248bbebb178b3127cf, type: 2}
+  mysteriousCrystal: {fileID: 1017667039378880, guid: 4da9049a9bd88c14a844fd93c410f903,
+    type: 2}
   Unknown: {fileID: 1697413958704606, guid: 754bc72a1ea9a2d449b31b4ea9220c51, type: 2}
   Fuel: {fileID: 1905780524239338, guid: a91ad3318a835d74dba9575a1d41e07a, type: 2}
+  red0: {fileID: 0}
+  cracked1: {fileID: 21300000, guid: 66dac682e65f0034d9304ad38a5352c7, type: 3}
+  crackedRed1: {fileID: 0}
+  cracked2: {fileID: 21300000, guid: b40d4b7bcab5d2948b8cac7e92780282, type: 3}
+  crackedRed2: {fileID: 0}
+  cracked3: {fileID: 21300000, guid: dfa43a450b1e37444a22c56564dc183d, type: 3}
+  crackedRed3: {fileID: 21300000, guid: bd0e9b6e3b92de348bd17fcb1026b95e, type: 3}
   ironChance: 0
   goldChance: 0
   diamondChance: 0
@@ -138,7 +146,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cd365a223d133da4593279031ef2a6d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c1e97e57ac877547a00d7b58dc80af1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

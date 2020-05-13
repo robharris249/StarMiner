@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 
-	public void PlayGame() {
+	public void playGame() {
 		SceneManager.LoadScene("Level1");
 		Time.timeScale = 1;
 	}
 
-	public void Quit() {
+	public void quit() {
 		Application.Quit();
-	}
-
-	public void Menu() {
-		SceneManager.LoadScene("MainMenu");
 	}
 }

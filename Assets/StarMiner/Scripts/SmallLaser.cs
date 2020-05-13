@@ -5,23 +5,26 @@ using UnityEngine;
 public class SmallLaser : MonoBehaviour {
 
 	public GameObject hitEffect; //TODO Explosion animation
-	public float lifeTimer = 2.0f;
+	public float lifeTimer;
 
 	void Start() {
+		lifeTimer = 0.75f;
 		Rigidbody2D playerRB = GameObject.Find("PlayerOne").GetComponent<Rigidbody2D>();
 		Vector3 playerVelocity = playerRB.velocity;
-		GetComponent<Rigidbody2D>().AddForce(transform.up * 10f + playerVelocity, ForceMode2D.Impulse);
+		GetComponent<Rigidbody2D>().AddForce(transform.up * 18f, ForceMode2D.Impulse);
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		Destroy(gameObject);
+		if(collision.collider.tag == "Asteroid") {
+			GameObject effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
+			Destroy(effect, 0.5f);
+			Destroy(gameObject);
+		}
 	}
 
 	void Update() {
-
 		lifeTimer -= Time.deltaTime;
-		if (lifeTimer <= 0)
-		{
+		if (lifeTimer <= 0) {
 			Destroy(gameObject);
 		}
 

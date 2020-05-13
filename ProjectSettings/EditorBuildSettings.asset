@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/StarMiner/MainMenu.unity
+    path: Assets/StarMiner/Scenes/MainMenu.unity
     guid: 8a1631fe2d8dfd4419d4ee5b3dfb15ce
   - enabled: 1
-    path: Assets/StarMiner/Level1.unity
+    path: Assets/StarMiner/Scenes/Level1.unity
     guid: 8a1cb82a244445341b142ab3b20526c2
