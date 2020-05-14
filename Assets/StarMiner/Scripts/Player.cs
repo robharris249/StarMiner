@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public GameObject laser;
+	
 	public float Xvelocity;
 	public float Yvelocity;
 	public float maxSpeed = 10.0f;
-	public Rigidbody2D rb;
 	public int score;
 	public int health;
 	public float fuel;
-	public GameObject flames;
+	public float fuelPenaltyCooldown;
+	public bool godMode;
+
+	public Rigidbody2D rb;
+	public UI UI;
 	public Transform exhaust;
 	public GameObject effect;
-	public float fuelPenaltyCooldown;
-	public UI UI;
-	public bool godMode;
+	public GameObject laser;
+	public GameObject flames;
+	public GameObject ironText;
+	public GameObject goldText;
+	public GameObject diamondText;
+	public GameObject crystalText;
+	public GameObject unknownText;
+	public GameObject fuelText;
 
 
 	// Use this for initialization
@@ -63,26 +71,26 @@ public class Player : MonoBehaviour {
 		}
 	
 			if (Input.GetKey(KeyCode.W)) {
-			
-			fuel -= 0.02f;//1min 20secs of fuel at this rate
-			if (fuel < 0) {
-				fuel = 0;
-				Destroy(effect);
-				FindObjectOfType<AudioManager>().Stop("PlayerEngine");
-			} else {
-				rb.AddForce(transform.up * 200);
-				effect.transform.position = exhaust.transform.position;
-				effect.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 0, 90);
-			}
+				
+				fuel -= 0.02f;//1min 20secs of fuel at this rate
+				if (fuel < 0) {
+					fuel = 0;
+					Destroy(effect);
+					FindObjectOfType<AudioManager>().Stop("PlayerEngine");
+				} else {
+					rb.AddForce(transform.up * 200);
+					effect.transform.position = exhaust.transform.position;
+					effect.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 0, 90);
+				}
 
-			if (rb.velocity.magnitude > maxSpeed) {
-				rb.velocity = rb.velocity.normalized * maxSpeed;
-			} 
-		}
+				if (rb.velocity.magnitude > maxSpeed) {
+					rb.velocity = rb.velocity.normalized * maxSpeed;
+				} 
+			}
 
 			if (Input.GetKey(KeyCode.A)) {
 			transform.Rotate(0.0f, 0.0f, 1.75f, Space.Self);
-		}
+			}
 
 			if (Input.GetKeyDown(KeyCode.S))
 		{
@@ -135,44 +143,61 @@ public class Player : MonoBehaviour {
 	}
 
 	public Vector3 getVelocity() {
-
 		Vector3 velocity = new Vector3(Xvelocity, Yvelocity, 0);
-
 		return velocity;
 	}
 
-	void OnCollisionEnter2D(Collision2D collision)
-	{
+	void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.collider.tag == "Asteroid") {
-			health -= 10;
+			health -= 1;
+		}
+
+		if(collision.collider.tag == "EnemyLaser") {
+			health -= 5;
+			FindObjectOfType<AudioManager>().Play("AsteroidHit");
 		}
 	}
 
-		//Collision Detection Stuff (Maybe move all this to another script?)
-		void OnTriggerEnter2D(Collider2D collision) {
+	//Collision Detection Stuff (Maybe move all this to another script?)
+	void OnTriggerEnter2D(Collider2D collision) {
 		if(collision.tag == "Iron") {
 			score += 10;
+			GameObject text = Instantiate(ironText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+			FindObjectOfType<AudioManager>().Play("Pickup");
 			Destroy(collision.gameObject);
+			Destroy(text, 0.75f);
 		}
 
 		else if (collision.tag == "Gold") {
 			score += 20;
+			GameObject text = Instantiate(goldText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+			FindObjectOfType<AudioManager>().Play("Pickup");
 			Destroy(collision.gameObject);
+			Destroy(text, 0.75f);
 		}
 
 		else if (collision.tag == "Diamond") {
 			score += 50;
+			GameObject text = Instantiate(diamondText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+			FindObjectOfType<AudioManager>().Play("Pickup");
 			Destroy(collision.gameObject);
+			Destroy(text, 0.75f);
 		}
 
 		else if (collision.tag == "mysterousCrystal") {
 			score += 100;
+			GameObject text = Instantiate(crystalText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+			FindObjectOfType<AudioManager>().Play("Pickup");
 			Destroy(collision.gameObject);
+			Destroy(text, 0.75f);
 		}
 
 		else if (collision.tag == "Unknown") {
 			score += 400;
+			GameObject text = Instantiate(unknownText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+			FindObjectOfType<AudioManager>().Play("Pickup");
 			Destroy(collision.gameObject);
+			Destroy(text, 0.75f);
 		}
 
 		else if (collision.tag == "Fuel") {
@@ -180,7 +205,10 @@ public class Player : MonoBehaviour {
 			if(fuel > 100) {
 				fuel = 100;
 			}
+			GameObject text = Instantiate(fuelText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+			FindObjectOfType<AudioManager>().Play("Fuelup");
 			Destroy(collision.gameObject);
+			Destroy(text, 0.75f);
 		}
 	}
 }

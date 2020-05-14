@@ -12,10 +12,19 @@ public class UI : MonoBehaviour {
 	public Text healthText;
 	public Text fuelText;
 	public Text frameRate;
+	public Text enemyCount;
+	public Text asteroidCount;
+	public Text time;
 	public GameObject gameOver;
 	public GameObject pauseMenu;
 	public GameObject toolsUI;
 	public float frameRateCooldown = 1.0f;
+	public int temptime;
+
+	void Start() {
+		enemyCount.text = FindObjectOfType<Spawner>().enemyCount.ToString();
+		asteroidCount.text = FindObjectOfType<Spawner>().asteroidCount.ToString();
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -28,6 +37,15 @@ public class UI : MonoBehaviour {
 			frameRate.text = (Time.frameCount / Time.time).ToString("F2") + " /s";
 			frameRateCooldown = 1.0f;
 		}
+
+		temptime = (int)Time.time;
+		if(temptime <= 60) {
+			time.text = temptime.ToString("F0") + " Secs";
+		} else {
+			time.text = temptime / 60 + " Mins " + temptime % 60 + " Secs"; 
+		}
+
+
 	}
 
 	public void playGame() {

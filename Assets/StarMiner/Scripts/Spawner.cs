@@ -8,6 +8,15 @@ public class Spawner : MonoBehaviour {
 	public GameObject asteroid1;
 	public GameObject asteroid2;
 
+	public GameObject enemy1;
+	public GameObject enemy2;
+	public GameObject enemy3;
+	public GameObject enemy4;
+	public GameObject enemy5;
+
+	public int enemyCount;
+	public int asteroidCount;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -21,25 +30,43 @@ public class Spawner : MonoBehaviour {
 					break;
 				}
 
-
-				int spawnChance = Random.Range(1, 10);
-				float asteroidType = Random.Range(1.0f, 1.9f);
-				Quaternion randomRotation = Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f));
-
-				if(spawnChance == 5) {
-					if(asteroidType < 1.5f) {
+				int spawnChance = Random.Range(1, 50);
+				if(spawnChance >= 45) {
+					asteroidCount++;
+					int asteroidType = Random.Range(1, 2);
+					Quaternion randomRotation = Quaternion.Euler(0, 0, Random.Range(0.0f, 360.0f));
+					if (asteroidType == 1) {
 						Instantiate(asteroid1, new Vector3(i + Random.Range(-0.25f, 0.25f), j + Random.Range(-0.25f, 0.25f), -1), randomRotation);
 					} else {
 						Instantiate(asteroid2, new Vector3(i + Random.Range(-0.25f, 0.25f), j + Random.Range(-0.25f, 0.25f), -1), randomRotation);
 					}
-					
+				}
+				if(spawnChance == 10) {
+					int enemyType = Random.Range(1, 20);
+					if(enemyType == 0 || enemyType > 5) {
+						//do nothing, this is here to further reduce amount of enemy ships
+					}
+					else if (enemyType == 1) {
+						Instantiate(enemy1, new Vector3(i + Random.Range(-0.25f, 0.25f), j + Random.Range(-0.25f, 0.25f), -1), Quaternion.identity);
+						enemyCount++;
+					}
+					else if(enemyType == 2) {
+						Instantiate(enemy2, new Vector3(i + Random.Range(-0.25f, 0.25f), j + Random.Range(-0.25f, 0.25f), -1), Quaternion.identity);
+						enemyCount++;
+					}
+					else if(enemyType == 3) {
+						Instantiate(enemy3, new Vector3(i + Random.Range(-0.25f, 0.25f), j + Random.Range(-0.25f, 0.25f), -1), Quaternion.identity);
+						enemyCount++;
+					}
+					else if(enemyType == 4) {
+						Instantiate(enemy4, new Vector3(i + Random.Range(-0.25f, 0.25f), j + Random.Range(-0.25f, 0.25f), -1), Quaternion.identity);
+						enemyCount++;
+					} else {
+						Instantiate(enemy5, new Vector3(i + Random.Range(-0.25f, 0.25f), j + Random.Range(-0.25f, 0.25f), -1), Quaternion.identity);
+						enemyCount++;
+					}
 				}
 			}
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

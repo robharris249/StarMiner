@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour {
 
 	public Transform firePoint;
-	public GameObject smallLaserPrefab;
+	public GameObject smallLaser;
 	public float laserCooldown;
 	public float bulletforce = 20f;
 
@@ -37,6 +37,6 @@ public class Shooting : MonoBehaviour {
 	}
 
 	void shoot() {
-		Instantiate(smallLaserPrefab, firePoint.position, firePoint.rotation);
+		Instantiate(smallLaser, firePoint.position, firePoint.rotation);
     }
 }

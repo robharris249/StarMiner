@@ -69,14 +69,15 @@ public class Asteroid : MonoBehaviour {
 				//Asteroid drops Fuel
 				Instantiate(Fuel, gameObject.transform.position, Quaternion.identity);
 			}
-
+			FindObjectOfType<Spawner>().asteroidCount--;
+			FindObjectOfType<UI>().asteroidCount.text = FindObjectOfType<Spawner>().asteroidCount.ToString();
 			Destroy(gameObject);
 		}
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
 
-		if (collision.collider.tag == "SmallLaser")	{
+		if (collision.collider.tag == "SmallLaser" || collision.collider.tag == "EnemyLaser")	{
 			if(health == 100) {
 				GetComponent<SpriteRenderer>().sprite = cracked1;
 				FindObjectOfType<AudioManager>().Play("AsteroidHit");

@@ -20,6 +20,12 @@ public class SmallLaser : MonoBehaviour {
 			Destroy(effect, 0.5f);
 			Destroy(gameObject);
 		}
+
+		if(collision.collider.tag == "Enemy") {
+			GameObject effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
+			Destroy(effect, 0.5f);
+			Destroy(gameObject);
+		}
 	}
 
 	void Update() {

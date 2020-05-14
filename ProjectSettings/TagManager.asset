@@ -12,6 +12,8 @@ TagManager:
   - Unknown
   - Fuel
   - mysterousCrystal
+  - EnemyLaser
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -23,8 +25,8 @@ TagManager:
   - 
   - Player
   - PlayerLaser
-  - 
-  - 
+  - EnemyLaser
+  - Enemy
   - 
   - 
   - 
