@@ -6,7 +6,7 @@ public class enemyShoot : MonoBehaviour {
 
 	public Transform firePoint;
 	public GameObject player;
-	public GameObject smallLaser;
+	public GameObject enemyLaser;
 
 	public float distance;
 	public float laserCooldown;
@@ -34,6 +34,6 @@ public class enemyShoot : MonoBehaviour {
 	}
 
 	void shoot() {
-		Instantiate(smallLaser, firePoint.position, firePoint.rotation);
+		Instantiate(enemyLaser, firePoint.position, firePoint.rotation);
 	}
 }

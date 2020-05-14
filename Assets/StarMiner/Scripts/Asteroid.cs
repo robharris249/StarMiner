@@ -30,7 +30,7 @@ public class Asteroid : MonoBehaviour {
 	public int uraniumChance;
 	public int unknownChance;
 	public int fuelChance;
-	
+
 	// Update is called once per frame
 	void Update () {
 		if(health <= 0) {
@@ -40,7 +40,7 @@ public class Asteroid : MonoBehaviour {
 			GameObject effect = Instantiate(explosion, transform.position, this.transform.rotation);
 			Destroy(effect, 0.65f);
 
-			int chanceRoll = Random.RandomRange(0, 101);
+			int chanceRoll = Random.Range(0, 101);
 
 			if (chanceRoll >= 0 && chanceRoll < 55) {
 				//Asteroid is empty

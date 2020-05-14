@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 4471113723141672}
   player: {fileID: 1500781721601600, guid: 6fde2f21b1288d446bd6f42df97fb8e5, type: 2}
-  smallLaser: {fileID: 1290814980734198, guid: 6026e7d1275031449b5b2352d10a76f3, type: 2}
+  enemyLaser: {fileID: 1290814980734198, guid: 6026e7d1275031449b5b2352d10a76f3, type: 2}
   distance: 0
   laserCooldown: 0
   bulletforce: 20
