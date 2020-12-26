@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
 	
 	public float Xvelocity;
 	public float Yvelocity;
-	public float maxSpeed = 10.0f;
+	public float maxSpeed;
 	public int score;
 	public int health;
 	public float fuel;
@@ -158,58 +158,76 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	//Collision Detection Stuff (Maybe move all this to another script?)
-	void OnTriggerEnter2D(Collider2D collision) {
-		if(collision.tag == "Iron") {
-			score += 10;
-			GameObject text = Instantiate(ironText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-			FindObjectOfType<AudioManager>().Play("Pickup");
-			Destroy(collision.gameObject);
-			Destroy(text, 0.75f);
+    private void OnTriggerExit2D(Collider2D collision) {
+        if(collision.tag == "Planet") {
+			rb.drag = 1.5f;
+		}
+	}
+
+    //Collision Detection Stuff (Maybe move all this to another script?)
+    void OnTriggerEnter2D(Collider2D collision) {
+
+		string tag = collision.tag;
+
+		switch(tag) {
+			case "Iron":
+				score += 10;
+				GameObject text = Instantiate(ironText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+				FindObjectOfType<AudioManager>().Play("Pickup");
+				Destroy(collision.gameObject);
+				Destroy(text, 0.75f);
+				break;
+
+			case "Gold":
+				score += 20;
+				text = Instantiate(goldText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+				FindObjectOfType<AudioManager>().Play("Pickup");
+				Destroy(collision.gameObject);
+				Destroy(text, 0.75f);
+				break;
+
+			case "Diamond":
+				score += 50;
+				text = Instantiate(diamondText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+				FindObjectOfType<AudioManager>().Play("Pickup");
+				Destroy(collision.gameObject);
+				Destroy(text, 0.75f);
+				break;
+
+			case "mysterousCrystal":
+				score += 100;
+				text = Instantiate(crystalText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+				FindObjectOfType<AudioManager>().Play("Pickup");
+				Destroy(collision.gameObject);
+				Destroy(text, 0.75f);
+				break;
+
+			case "Unknown":
+				score += 400;
+				text = Instantiate(unknownText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+				FindObjectOfType<AudioManager>().Play("Pickup");
+				Destroy(collision.gameObject);
+				Destroy(text, 0.75f);
+				break;
+
+			case "Fuel":
+				fuel += 30;
+				if (fuel > 100) {
+					fuel = 100;
+				}
+				text = Instantiate(fuelText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+				FindObjectOfType<AudioManager>().Play("Fuelup");
+				Destroy(collision.gameObject);
+				Destroy(text, 0.75f);
+				break;
+
+			case "Planet":
+				rb.drag = 15.0f;
+			break;
+
+
 		}
 
-		else if (collision.tag == "Gold") {
-			score += 20;
-			GameObject text = Instantiate(goldText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-			FindObjectOfType<AudioManager>().Play("Pickup");
-			Destroy(collision.gameObject);
-			Destroy(text, 0.75f);
-		}
-
-		else if (collision.tag == "Diamond") {
-			score += 50;
-			GameObject text = Instantiate(diamondText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-			FindObjectOfType<AudioManager>().Play("Pickup");
-			Destroy(collision.gameObject);
-			Destroy(text, 0.75f);
-		}
-
-		else if (collision.tag == "mysterousCrystal") {
-			score += 100;
-			GameObject text = Instantiate(crystalText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-			FindObjectOfType<AudioManager>().Play("Pickup");
-			Destroy(collision.gameObject);
-			Destroy(text, 0.75f);
-		}
-
-		else if (collision.tag == "Unknown") {
-			score += 400;
-			GameObject text = Instantiate(unknownText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-			FindObjectOfType<AudioManager>().Play("Pickup");
-			Destroy(collision.gameObject);
-			Destroy(text, 0.75f);
-		}
-
-		else if (collision.tag == "Fuel") {
-			fuel += 30;
-			if(fuel > 100) {
-				fuel = 100;
-			}
-			GameObject text = Instantiate(fuelText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-			FindObjectOfType<AudioManager>().Play("Fuelup");
-			Destroy(collision.gameObject);
-			Destroy(text, 0.75f);
-		}
 	}
 }
 

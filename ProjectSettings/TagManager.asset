@@ -14,6 +14,7 @@ TagManager:
   - mysterousCrystal
   - EnemyLaser
   - Enemy
+  - Planet
   layers:
   - Default
   - TransparentFX
@@ -56,4 +57,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 256358317
+    locked: 0
+  - name: UI
+    uniqueID: 2795523239
     locked: 0
