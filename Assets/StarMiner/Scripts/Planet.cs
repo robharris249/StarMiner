@@ -6,11 +6,11 @@ public class Planet : MonoBehaviour {
 
     public string name;
 
-    public int ironPrice;
-    public int goldPrice;
-    public int diamondPrice;
-    public int crystalPrice;
-    public int unknownPrice;
+    public float ironPrice;
+    public float goldPrice;
+    public float diamondPrice;
+    public float crystalPrice;
+    public float unknownPrice;
 
     // Start is called before the first frame update
     void Start() {

@@ -20,7 +20,7 @@ public class enemy : MonoBehaviour {
 			Vector3 vectorToTarget = player.transform.position - transform.position;
 			float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 			Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-			transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 100);
+			transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 200);
 			transform.Rotate(0, 0, -90.0f, Space.Self);
 		}
 

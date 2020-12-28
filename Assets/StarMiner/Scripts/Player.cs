@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	
-	public float Xvelocity;
-	public float Yvelocity;
 	public float maxSpeed;
 	public int score;
 	public int health;
@@ -14,12 +11,17 @@ public class Player : MonoBehaviour {
 	public float fuelPenaltyCooldown;
 	public bool godMode;
 
+	public int cargoSize;
+	public int[] cargo;
+
 	public Rigidbody2D rb;
 	public UI UI;
 	public Transform exhaust;
 	public GameObject effect;
+	public GameObject shieldEffect;
 	public GameObject laser;
 	public GameObject flames;
+	public GameObject shield;
 	public GameObject ironText;
 	public GameObject goldText;
 	public GameObject diamondText;
@@ -35,8 +37,11 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Xvelocity = rb.GetPointVelocity(GetComponent<Player>().transform.position).x;
-		Yvelocity = rb.GetPointVelocity(GetComponent<Player>().transform.position).y;
+
+		if(shieldEffect != null) {
+			shieldEffect.transform.position = transform.position;
+		}
+		
 
 		if (godMode) {
 			fuel = 100;
@@ -142,10 +147,6 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	public Vector3 getVelocity() {
-		Vector3 velocity = new Vector3(Xvelocity, Yvelocity, 0);
-		return velocity;
-	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.collider.tag == "Asteroid") {
@@ -153,6 +154,16 @@ public class Player : MonoBehaviour {
 		}
 
 		if(collision.collider.tag == "EnemyLaser") {
+			Vector3 contactPoint = collision.contacts[0].point;
+			Vector3 origin = transform.position;
+
+			Vector3 vectorToTarget = contactPoint - transform.position;
+			float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
+			Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+
+			shieldEffect = Instantiate(shield, transform.position, q * Quaternion.Euler(0, 0, -90));
+
+			Destroy(shieldEffect, 0.5f);
 			health -= 5;
 			FindObjectOfType<AudioManager>().Play("AsteroidHit");
 		}

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SmallLaser : MonoBehaviour {
 
-	public GameObject hitEffect; //TODO Explosion animation
+	public GameObject hitEffect;
+	public Rigidbody2D rb;
 	public float lifeTimer;
 
 	void Start() {
@@ -15,17 +16,27 @@ public class SmallLaser : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		if(collision.collider.tag == "Asteroid") {
-			GameObject effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
-			Destroy(effect, 0.5f);
-			Destroy(gameObject);
-		}
 
-		if(collision.collider.tag == "Enemy") {
-			GameObject effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
-			Destroy(effect, 0.5f);
-			Destroy(gameObject);
-		}
+		string tag = collision.collider.tag;
+
+		switch (tag) {
+			case "Asteroid":
+				rb.velocity = new Vector2(0, 0);
+				GameObject effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
+				Destroy(effect, 0.5f);
+				Destroy(gameObject);
+				break;
+
+			case "Enemy":
+				effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
+				Destroy(effect, 0.5f);
+				Destroy(gameObject);
+				break;
+
+			case "Wall":
+				Destroy(gameObject);
+				break;
+        }
 	}
 
 	void Update() {

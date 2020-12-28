@@ -15,6 +15,7 @@ TagManager:
   - EnemyLaser
   - Enemy
   - Planet
+  - Wall
   layers:
   - Default
   - TransparentFX
