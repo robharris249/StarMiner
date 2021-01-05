@@ -68,11 +68,14 @@
     <Compile Include="Assets\StarMiner\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\StarMiner\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\StarMiner\Scripts\EnemyLaser.cs" />
+    <Compile Include="Assets\StarMiner\Scripts\Laser.cs" />
     <Compile Include="Assets\StarMiner\Scripts\MainMenu.cs" />
     <Compile Include="Assets\StarMiner\Scripts\Parallax.cs" />
     <Compile Include="Assets\StarMiner\Scripts\Planet.cs" />
+    <Compile Include="Assets\StarMiner\Scripts\PlanetBoundary.cs" />
     <Compile Include="Assets\StarMiner\Scripts\Player.cs" />
     <Compile Include="Assets\StarMiner\Scripts\Shooting.cs" />
+    <Compile Include="Assets\StarMiner\Scripts\Shop.cs" />
     <Compile Include="Assets\StarMiner\Scripts\SmallLaser.cs" />
     <Compile Include="Assets\StarMiner\Scripts\Sound.cs" />
     <Compile Include="Assets\StarMiner\Scripts\Spawner.cs" />

@@ -12,24 +12,10 @@ public class Asteroid : MonoBehaviour {
 	public GameObject Diamond;
 	public GameObject mysteriousCrystal;
 	public GameObject Unknown;
-	public GameObject Fuel;
 
-	public Sprite red0;
 	public Sprite cracked1;
-	public Sprite crackedRed1;
 	public Sprite cracked2;
-	public Sprite crackedRed2;
 	public Sprite cracked3;
-	public Sprite crackedRed3;
-
-
-	//resource chances
-	public int ironChance;
-	public int goldChance;
-	public int diamondChance;
-	public int uraniumChance;
-	public int unknownChance;
-	public int fuelChance;
 
 	// Update is called once per frame
 	void Update () {
@@ -61,14 +47,11 @@ public class Asteroid : MonoBehaviour {
 				//Asteroid drops Mysterious Crystal
 				Instantiate(mysteriousCrystal, gameObject.transform.position, Quaternion.identity);
 			}
-			else if (chanceRoll > 97 && chanceRoll < 99) {
+			else if (chanceRoll > 97) {
 				//Asteroid drops Unknown
 				Instantiate(Unknown, gameObject.transform.position, Quaternion.identity);
 			}
-			else if (chanceRoll > 99) {
-				//Asteroid drops Fuel
-				Instantiate(Fuel, gameObject.transform.position, Quaternion.identity);
-			}
+
 			FindObjectOfType<Spawner>().asteroidCount--;
 			FindObjectOfType<UI>().asteroidCount.text = FindObjectOfType<Spawner>().asteroidCount.ToString();
 			Destroy(gameObject);
@@ -78,40 +61,36 @@ public class Asteroid : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 
 		if (collision.collider.tag == "SmallLaser" || collision.collider.tag == "EnemyLaser")	{
-			if(health == 100) {
+			health -= 25;
+
+			if (health == 75) {
 				GetComponent<SpriteRenderer>().sprite = cracked1;
 				FindObjectOfType<AudioManager>().Play("AsteroidHit");
 			}
 
-			else if(health == 75) {
+			else if(health == 50) {
 				GetComponent<SpriteRenderer>().sprite = cracked2;
 				FindObjectOfType<AudioManager>().Play("AsteroidHit");
 			}
 
-			else if (health == 50) {
+			else if (health == 25) {
 				GetComponent<SpriteRenderer>().sprite = cracked3;
 				FindObjectOfType<AudioManager>().Play("AsteroidHit");
 			}
-
-			else if (health == 25) {
-				GetComponent<SpriteRenderer>().sprite = crackedRed3;
-			}
-
-			health -= 25;
 		}
-		/* //TODO BigLaser
+		//TODO BigLaser
 		else if (collision.collider.tag == "BigLaser") {
 			health -= 50;
-			if (health > 0)
-			{
+			
+			if (health == 50) {
+				GetComponent<SpriteRenderer>().sprite = cracked2;
+				FindObjectOfType<AudioManager>().Play("AsteroidHit");
+			} 
+			
+			else if (health >= 25) {
+				GetComponent<SpriteRenderer>().sprite = cracked3;
 				FindObjectOfType<AudioManager>().Play("AsteroidHit");
 			}
-			else
-			{
-				FindObjectOfType<AudioManager>().Play("AsteroidDestroy");
-
-			}
 		}
-		*/
 	}
 }

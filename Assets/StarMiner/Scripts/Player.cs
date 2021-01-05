@@ -5,11 +5,20 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	public float maxSpeed;
-	public int score;
-	public int health;
+	public float credits;
+
+	public bool godMode;
+	public bool docked;
+
 	public float fuel;
 	public float fuelPenaltyCooldown;
-	public bool godMode;
+	public float maxFuel;
+
+	public int health;
+	public int maxHealth;
+
+	public bool type2Laser;
+	public bool dualLaser;
 
 	public int cargoSize;
 	public int[] cargo;
@@ -19,7 +28,6 @@ public class Player : MonoBehaviour {
 	public Transform exhaust;
 	public GameObject effect;
 	public GameObject shieldEffect;
-	public GameObject laser;
 	public GameObject flames;
 	public GameObject shield;
 	public GameObject ironText;
@@ -28,11 +36,17 @@ public class Player : MonoBehaviour {
 	public GameObject crystalText;
 	public GameObject unknownText;
 	public GameObject fuelText;
+	public GameObject cargoFullText;
+	public GameObject shop;
 
 
 	// Use this for initialization
 	void Start () {
+		cargo = new int[5];
 		godMode = false;
+		docked = false;
+		type2Laser = false;
+		dualLaser = false;
 	}
 	
 	// Update is called once per frame
@@ -68,12 +82,12 @@ public class Player : MonoBehaviour {
 		if (Time.timeScale == 1) {
 
 			if (Input.GetKeyDown(KeyCode.W)) {
-			FindObjectOfType<AudioManager>().Play("PlayerEngine");
-			if(fuel > 0) {
-				effect = Instantiate(flames, exhaust.position, Quaternion.Euler(0, 0, 90));
-			}
+				FindObjectOfType<AudioManager>().Play("PlayerEngine");
+				if(fuel > 0) {
+					effect = Instantiate(flames, exhaust.position, Quaternion.Euler(0, 0, 90));
+				}
 			
-		}
+			}
 	
 			if (Input.GetKey(KeyCode.W)) {
 				
@@ -83,7 +97,7 @@ public class Player : MonoBehaviour {
 					Destroy(effect);
 					FindObjectOfType<AudioManager>().Stop("PlayerEngine");
 				} else {
-					rb.AddForce(transform.up * 200);
+					rb.AddForce(transform.up * 125);
 					effect.transform.position = exhaust.transform.position;
 					effect.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 0, 90);
 				}
@@ -94,40 +108,43 @@ public class Player : MonoBehaviour {
 			}
 
 			if (Input.GetKey(KeyCode.A)) {
-			transform.Rotate(0.0f, 0.0f, 1.75f, Space.Self);
+				transform.Rotate(0.0f, 0.0f, 1.75f, Space.Self);
 			}
 
-			if (Input.GetKeyDown(KeyCode.S))
-		{
-			FindObjectOfType<AudioManager>().Play("PlayerEngine");
-		}
+			if (Input.GetKeyDown(KeyCode.S)) {
+				FindObjectOfType<AudioManager>().Play("PlayerEngine");
+			}
 
-			if (Input.GetKeyUp(KeyCode.S))
-		{
-			FindObjectOfType<AudioManager>().Stop("PlayerEngine");
-		}
+			if (Input.GetKeyUp(KeyCode.S)) {
+				FindObjectOfType<AudioManager>().Stop("PlayerEngine");
+			}
 
 			if (Input.GetKey(KeyCode.S)) {
-			fuel -= 0.02f;//2mins 40secs of fuel at this rate
+				fuel -= 0.02f;//2mins 40secs of fuel at this rate
 
-			if (fuel < 0) {
-				fuel = 0;
-				FindObjectOfType<AudioManager>().Stop("PlayerEngine");
-			} else {
-				rb.AddForce(transform.up * -200);
-			}
+				if (fuel < 0) {
+					fuel = 0;
+					FindObjectOfType<AudioManager>().Stop("PlayerEngine");
+				} else {
+					rb.AddForce(transform.up * -125);
+				}
 			
 
-			if (rb.velocity.magnitude > maxSpeed)
-			{
-				rb.velocity = rb.velocity.normalized * maxSpeed;
+				if (rb.velocity.magnitude > maxSpeed) {
+					rb.velocity = rb.velocity.normalized * maxSpeed;
+				}
 			}
-		}
 
 			if (Input.GetKey(KeyCode.D)) {
 
-			transform.Rotate(0.0f, 0.0f, -1.75f, Space.Self);
-		}
+				transform.Rotate(0.0f, 0.0f, -1.75f, Space.Self);
+			}
+
+			if (docked && Input.GetKey(KeyCode.F)) {
+				shop.SetActive(true);
+				shop.GetComponent<Shop>().updateShop();
+				Time.timeScale = 0;
+			}
 		}
 
 		if (Input.GetKeyUp(KeyCode.W)) {
@@ -169,76 +186,86 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-    private void OnTriggerExit2D(Collider2D collision) {
-        if(collision.tag == "Planet") {
-			rb.drag = 1.5f;
-		}
-	}
+   
 
     //Collision Detection Stuff (Maybe move all this to another script?)
     void OnTriggerEnter2D(Collider2D collision) {
 
-		string tag = collision.tag;
-
-		switch(tag) {
+		switch(collision.tag) {
 			case "Iron":
-				score += 10;
-				GameObject text = Instantiate(ironText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-				FindObjectOfType<AudioManager>().Play("Pickup");
-				Destroy(collision.gameObject);
-				Destroy(text, 0.75f);
+				spawnFloatingText(ironText, collision);
+				if(!isCargoFull()) {
+					cargo[0]++;
+                }
 				break;
 
 			case "Gold":
-				score += 20;
-				text = Instantiate(goldText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-				FindObjectOfType<AudioManager>().Play("Pickup");
-				Destroy(collision.gameObject);
-				Destroy(text, 0.75f);
+				spawnFloatingText(goldText, collision);
+				if (!isCargoFull()) {
+					cargo[1]++;
+				}
 				break;
 
 			case "Diamond":
-				score += 50;
-				text = Instantiate(diamondText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-				FindObjectOfType<AudioManager>().Play("Pickup");
-				Destroy(collision.gameObject);
-				Destroy(text, 0.75f);
+				spawnFloatingText(diamondText, collision);
+				if (!isCargoFull()) {
+					cargo[2]++;
+				}
 				break;
 
 			case "mysterousCrystal":
-				score += 100;
-				text = Instantiate(crystalText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-				FindObjectOfType<AudioManager>().Play("Pickup");
-				Destroy(collision.gameObject);
-				Destroy(text, 0.75f);
+				spawnFloatingText(crystalText, collision);
+				if (!isCargoFull()) {
+					cargo[3]++;
+				}
 				break;
 
 			case "Unknown":
-				score += 400;
-				text = Instantiate(unknownText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-				FindObjectOfType<AudioManager>().Play("Pickup");
-				Destroy(collision.gameObject);
-				Destroy(text, 0.75f);
-				break;
-
-			case "Fuel":
-				fuel += 30;
-				if (fuel > 100) {
-					fuel = 100;
+				spawnFloatingText(unknownText, collision);
+				if (!isCargoFull()) {
+					cargo[4]++;
 				}
-				text = Instantiate(fuelText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
-				FindObjectOfType<AudioManager>().Play("Fuelup");
-				Destroy(collision.gameObject);
-				Destroy(text, 0.75f);
 				break;
 
 			case "Planet":
+				shop.GetComponent<Shop>().planet = collision.gameObject.GetComponent<Planet>();
+				shop.GetComponent<Shop>().updateShop();
+				docked = true;
 				rb.drag = 15.0f;
 			break;
 
 
 		}
 
+	}
+
+    private void OnTriggerExit2D(Collider2D collision) {
+		if (collision.tag == "Planet") {
+			rb.drag = 1.5f;
+		}
+	}
+
+	private bool isCargoFull() {
+	
+		int total = cargo[0] + cargo[1] + cargo[2] + cargo[3] + cargo[4];
+
+		if(total >= cargoSize) {
+			return true;
+        } else {
+			return false;
+        }
+	}
+
+	private void spawnFloatingText(GameObject floatingText, Collider2D collision) {
+		if (isCargoFull()) {
+			GameObject text = Instantiate(cargoFullText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+			Destroy(text, 0.75f);
+		} else {
+			GameObject text = Instantiate(floatingText, collision.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+			FindObjectOfType<AudioManager>().Play("Pickup");
+			Destroy(collision.gameObject);
+			Destroy(text, 0.75f);
+		}
 	}
 }
 

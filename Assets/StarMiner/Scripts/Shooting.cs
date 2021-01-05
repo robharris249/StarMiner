@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour {
 
+	public Player player;
 	public Transform firePoint;
+	public Transform firePointRight;
+	public Transform firePointLeft;
 	public GameObject smallLaser;
+	public GameObject bigLaser;
 	public float laserCooldown;
 	public float bulletforce = 20f;
 
 	// Use this for initialization
 	void Start() {
 		laserCooldown = 0;
+		player = gameObject.GetComponent<Player>();
 	}
 
 	// Update is called once per frame
@@ -26,7 +31,7 @@ public class Shooting : MonoBehaviour {
 
 			if (Input.GetKey(KeyCode.Space) && laserCooldown == 0) {
 				shoot();
-				if(FindObjectOfType<Player>().godMode) {
+				if(player.godMode) {
 					laserCooldown = 0.05f;
 				} else {
 					laserCooldown = 0.5f;
@@ -37,6 +42,16 @@ public class Shooting : MonoBehaviour {
 	}
 
 	void shoot() {
-		Instantiate(smallLaser, firePoint.position, firePoint.rotation);
+
+		if(player.dualLaser) {
+			Instantiate(bigLaser, firePointRight.position, firePoint.rotation);
+			Instantiate(bigLaser, firePointLeft.position, firePoint.rotation);
+		} else if(player.type2Laser) {
+			Instantiate(bigLaser, firePoint.position, firePoint.rotation);
+        } else {
+			Instantiate(smallLaser, firePoint.position, firePoint.rotation);
+		}
+
+		
     }
 }

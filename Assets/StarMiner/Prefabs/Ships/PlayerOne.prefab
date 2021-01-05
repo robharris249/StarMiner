@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &63436807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63436808}
+  m_Layer: 8
+  m_Name: FirePointRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &63436808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63436807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.12, y: 0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4583736546751470}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1822223489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1822223490}
+  m_Layer: 8
+  m_Name: FirePointLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1822223490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822223489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.12, y: 0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4583736546751470}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160589919458086
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,12 +118,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500781721601600}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4701490719356966}
   - {fileID: 4631325590576758}
+  - {fileID: 63436808}
+  - {fileID: 1822223490}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -145,20 +207,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c09fe7b5fdee04da54965690469175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Xvelocity: 0
-  Yvelocity: 0
   maxSpeed: 15
-  score: 0
-  health: 100
+  credits: 1000
+  godMode: 0
+  docked: 0
   fuel: 100
   fuelPenaltyCooldown: 0
-  godMode: 0
+  maxFuel: 100
+  health: 100
+  maxHealth: 100
+  type2Laser: 0
+  dualLaser: 0
+  cargoSize: 3
+  cargo: 
   rb: {fileID: 50731914093925964}
   UI: {fileID: 0}
   exhaust: {fileID: 4631325590576758}
   effect: {fileID: 0}
-  laser: {fileID: 1823081920281644, guid: d7cd0e9d212c4c44a93406a50531a421, type: 3}
+  shieldEffect: {fileID: 0}
   flames: {fileID: 1856210690322292, guid: 574c4b33b628fb844a0de079668a0f12, type: 3}
+  shield: {fileID: 3269776489116748036, guid: 441283888c3e24c4d952fd4a3139c060, type: 3}
   ironText: {fileID: 1612076208901930, guid: ca99708e577d382468268b4c153766a1, type: 3}
   goldText: {fileID: 1414836556191990, guid: 85c8e46389ef93d43b89d28a2f7a3ec8, type: 3}
   diamondText: {fileID: 1650421845434236, guid: b2d51261fbca0144da5030f601643f02,
@@ -168,6 +236,9 @@ MonoBehaviour:
   unknownText: {fileID: 1892284825471572, guid: 36c4b7d3a8b837b42be68cc5d42b9cd3,
     type: 3}
   fuelText: {fileID: 1963750984134448, guid: 456db347166cd494e88a67a9a4c62076, type: 3}
+  cargoFullText: {fileID: 2389820149031250171, guid: 38ff25570aa2b8b4f884ff26d9613310,
+    type: 3}
+  shop: {fileID: 0}
 --- !u!50 &50731914093925964
 Rigidbody2D:
   serializedVersion: 4
@@ -201,8 +272,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0daa3bc30bc888f44bd460a516ca797f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 114323213469053274}
   firePoint: {fileID: 4701490719356966}
   smallLaser: {fileID: 1823081920281644, guid: d7cd0e9d212c4c44a93406a50531a421, type: 3}
+  bigLaser: {fileID: 7077198595304666987, guid: 446211de84c3c0043854a6c26f09faa3,
+    type: 3}
   laserCooldown: 0
   bulletforce: 20
 --- !u!1 &1513846955017774

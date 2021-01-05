@@ -22,13 +22,13 @@ public class SmallLaser : MonoBehaviour {
 		switch (tag) {
 			case "Asteroid":
 				rb.velocity = new Vector2(0, 0);
-				GameObject effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
+				GameObject effect = Instantiate(hitEffect, collision.contacts[0].point, this.transform.rotation);
 				Destroy(effect, 0.5f);
 				Destroy(gameObject);
 				break;
 
 			case "Enemy":
-				effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
+				effect = Instantiate(hitEffect, collision.contacts[0].point, this.transform.rotation);
 				Destroy(effect, 0.5f);
 				Destroy(gameObject);
 				break;

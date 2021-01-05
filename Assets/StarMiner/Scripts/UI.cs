@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour {
 
 	public Player player;
-	public Text scoreText;
+	public Text creditsText;
 	public Text gameOverScore;
 	public Text healthText;
 	public Text fuelText;
@@ -15,6 +15,8 @@ public class UI : MonoBehaviour {
 	public Text enemyCount;
 	public Text asteroidCount;
 	public Text time;
+	public Text xCoords;
+	public Text yCoords;
 	public GameObject gameOver;
 	public GameObject pauseMenu;
 	public GameObject toolsUI;
@@ -28,10 +30,12 @@ public class UI : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		xCoords.text = player.transform.position.x.ToString("F1");
+		yCoords.text = player.transform.position.y.ToString("F1");
 		fuelText.text = player.fuel.ToString("F2");
 		healthText.text = player.health.ToString();
-		scoreText.text = player.score.ToString();
-		gameOverScore.text = player.score.ToString();
+		creditsText.text = player.credits.ToString("F2");
+		gameOverScore.text = player.credits.ToString();
 		frameRateCooldown -= Time.deltaTime;
 		if(frameRateCooldown < 0) {
 			frameRate.text = (Time.frameCount / Time.time).ToString("F2") + " /s";
