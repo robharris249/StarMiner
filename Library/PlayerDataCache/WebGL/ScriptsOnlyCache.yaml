@@ -61,19 +61,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11286}
+      Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 12120}
+      Script: {instanceID: 11794}
     - Class: 114
-      Script: {instanceID: 12716}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 13354}
+      Script: {instanceID: 12694}
     - Class: 114
-      Script: {instanceID: 13862}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 26892}
+      Script: {instanceID: 13840}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -134,47 +134,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11286}
+      Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11454}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 11706}
+      Script: {instanceID: 11682}
     - Class: 114
-      Script: {instanceID: 11928}
+      Script: {instanceID: 11906}
     - Class: 114
-      Script: {instanceID: 11988}
+      Script: {instanceID: 11966}
     - Class: 114
-      Script: {instanceID: 12120}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 12212}
+      Script: {instanceID: 12190}
+    - Class: 114
+      Script: {instanceID: 12568}
     - Class: 114
       Script: {instanceID: 12590}
     - Class: 114
-      Script: {instanceID: 12612}
+      Script: {instanceID: 12594}
     - Class: 114
       Script: {instanceID: 12616}
     - Class: 114
-      Script: {instanceID: 12638}
+      Script: {instanceID: 12694}
     - Class: 114
-      Script: {instanceID: 12716}
+      Script: {instanceID: 12760}
     - Class: 114
-      Script: {instanceID: 12782}
+      Script: {instanceID: 12792}
     - Class: 114
-      Script: {instanceID: 12814}
+      Script: {instanceID: 12874}
     - Class: 114
-      Script: {instanceID: 12896}
+      Script: {instanceID: 13324}
     - Class: 114
-      Script: {instanceID: 13346}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13354}
+      Script: {instanceID: 13414}
     - Class: 114
-      Script: {instanceID: 13436}
+      Script: {instanceID: 13822}
     - Class: 114
-      Script: {instanceID: 13844}
-    - Class: 114
-      Script: {instanceID: 13862}
+      Script: {instanceID: 13840}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -219,21 +219,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11286}
+      Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11570}
+      Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 12120}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 12616}
+      Script: {instanceID: 12594}
     - Class: 114
-      Script: {instanceID: 12716}
+      Script: {instanceID: 12694}
     - Class: 114
-      Script: {instanceID: 12926}
+      Script: {instanceID: 12904}
     - Class: 114
-      Script: {instanceID: 13354}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13862}
+      Script: {instanceID: 13840}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -433,6 +433,12 @@ ScriptsOnlyBuild:
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkProximityChecker
+  - hash:
+      serializedVersion: 2
+      Hash: fc3cdf3d70133e45a44dd8192493b40e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InstructionsMenu
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -961,12 +967,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: fc3cdf3d70133e45a44dd8192493b40e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: InstructionsMenu
   platform: 20
   scenePathNames:
   - Assets/StarMiner/Scenes/MainMenu.unity

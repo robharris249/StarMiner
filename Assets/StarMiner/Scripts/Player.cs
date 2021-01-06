@@ -97,7 +97,7 @@ public class Player : MonoBehaviour {
 					Destroy(effect);
 					FindObjectOfType<AudioManager>().Stop("PlayerEngine");
 				} else {
-					rb.AddForce(transform.up * 125);
+					rb.AddForce(transform.up * 135);
 					effect.transform.position = exhaust.transform.position;
 					effect.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 0, 90);
 				}
@@ -126,7 +126,7 @@ public class Player : MonoBehaviour {
 					fuel = 0;
 					FindObjectOfType<AudioManager>().Stop("PlayerEngine");
 				} else {
-					rb.AddForce(transform.up * -125);
+					rb.AddForce(transform.up * -135);
 				}
 			
 
