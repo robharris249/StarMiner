@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 0}
-  name: 
+  icon: {fileID: 480523668370546313, guid: 5779c6f04dcfe6443a5599ef36938a95, type: 3}
   ironPrice: 15
   goldPrice: 25
   diamondPrice: 50

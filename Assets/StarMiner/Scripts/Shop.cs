@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour {
 
-    //public GameObject planet;
-    //public GameObject player;
-
     public Player player;
     public Planet planet;
-    
+
+    public GameObject planetIcon;
+    public Text planetName;
+
     public Text ironPrice;
     public Text goldPrice;
     public Text diamondPrice;
@@ -29,12 +29,6 @@ public class Shop : MonoBehaviour {
     public Text shields;
     public Text maxShields;
 
-    public Button extraFuel;
-    public Button extendFuel;
-    public Button type2Laser;
-    public Button dualLaser;
-    public Button extendCargo;
-    public Button TardisCargo;
 
     void Start() {
         player = FindObjectOfType<Player>().GetComponent<Player>();
@@ -76,7 +70,6 @@ public class Shop : MonoBehaviour {
             player.credits -= 500;
             player.maxFuel += 50;
             updateShop();
-            extraFuel.spriteState = 
         }
     }
 
@@ -152,13 +145,24 @@ public class Shop : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    public void updateShop() {
-        ironPrice.text = this.planet.ironPrice.ToString();
-        goldPrice.text = this.planet.goldPrice.ToString();
-        diamondPrice.text = this.planet.diamondPrice.ToString();
-        crystalPrice.text = this.planet.crystalPrice.ToString();
-        unknownPrice.text = this.planet.unknownPrice.ToString();
+    public void setUpShop() {
 
+        planetIcon.GetComponent<SpriteRenderer>().sprite = planet.icon.GetComponent<SpriteRenderer>().sprite;
+        planetIcon.transform.localScale = planet.icon.transform.localScale;
+
+        planetName.text = planet.gameObject.name;
+
+        ironPrice.text = planet.ironPrice.ToString();
+        goldPrice.text = planet.goldPrice.ToString();
+        diamondPrice.text = planet.diamondPrice.ToString();
+        crystalPrice.text = planet.crystalPrice.ToString();
+        unknownPrice.text = planet.unknownPrice.ToString();
+
+
+        updateShop();
+    }
+
+    public void updateShop() {
         ironAmount.text = player.cargo[0].ToString();
         goldAmount.text = player.cargo[1].ToString();
         diamondAmount.text = player.cargo[2].ToString();
@@ -166,8 +170,8 @@ public class Shop : MonoBehaviour {
         unknownAmount.text = player.cargo[4].ToString();
         credits.text = player.credits.ToString("F2");
         fuel.text = player.fuel.ToString("F2");
-        //maxFuel.text = player.maxFuel.ToString();
+        maxFuel.text = player.maxFuel.ToString();
         shields.text = player.health.ToString();
-        //maxShields.text = player.maxHealth.ToString();
+        maxShields.text = player.maxHealth.ToString();
     }
 }

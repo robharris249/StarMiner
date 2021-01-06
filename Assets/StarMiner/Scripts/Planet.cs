@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class Planet : MonoBehaviour {
 
     public GameObject shop;
-    
-    public string name;
+    public GameObject icon;
 
     public float ironPrice;
     public float goldPrice;
@@ -22,11 +21,6 @@ public class Planet : MonoBehaviour {
     void Start() {
         txtName.enabled = false;
         instructions.enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update() {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

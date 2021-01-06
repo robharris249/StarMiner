@@ -9,5 +9,9 @@ EditorBuildSettings:
     path: Assets/StarMiner/Scenes/MainMenu.unity
     guid: 8a1631fe2d8dfd4419d4ee5b3dfb15ce
   - enabled: 1
+    path: Assets/StarMiner/Scenes/Instructions.unity
+    guid: fbfbcf59661731c4c874481407d4da36
+  - enabled: 1
     path: Assets/StarMiner/Scenes/Level1.unity
     guid: 8a1cb82a244445341b142ab3b20526c2
+  m_configObjects: {}

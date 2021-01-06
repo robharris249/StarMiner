@@ -142,7 +142,7 @@ public class Player : MonoBehaviour {
 
 			if (docked && Input.GetKey(KeyCode.F)) {
 				shop.SetActive(true);
-				shop.GetComponent<Shop>().updateShop();
+				shop.GetComponent<Shop>().setUpShop();
 				Time.timeScale = 0;
 			}
 		}
