@@ -242,6 +242,7 @@ public class Player : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D collision) {
 		if (collision.tag == "Planet") {
 			rb.drag = 1.5f;
+			docked = false;
 		}
 	}
 

@@ -15345,6 +15345,11 @@ PrefabInstance:
       propertyPath: credits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114323213469053274, guid: 6fde2f21b1288d446bd6f42df97fb8e5,
+        type: 3}
+      propertyPath: cargoSize
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fde2f21b1288d446bd6f42df97fb8e5, type: 3}
 --- !u!1 &1911912677

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4077381676330932}
   - component: {fileID: 212791825549389414}
-  - component: {fileID: 58319785834059376}
+  - component: {fileID: 3113103374843907744}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Gold
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &58319785834059376
-CircleCollider2D:
+--- !u!70 &3113103374843907744
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,5 +96,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.15
+  m_Size: {x: 0.26, y: 0.48}
+  m_Direction: 0

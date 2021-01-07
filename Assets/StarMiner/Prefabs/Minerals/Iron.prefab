@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4802329058353836}
   - component: {fileID: 212674043636566788}
-  - component: {fileID: 58502226793257594}
+  - component: {fileID: 4121531969427641204}
   m_Layer: 0
   m_Name: Iron
   m_TagString: Iron
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417846891466788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.989, y: 0.013, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &58502226793257594
-CircleCollider2D:
+--- !u!60 &4121531969427641204
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,5 +96,22 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.15
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.11, y: 0.225}
+      - {x: 0.07, y: 0.228}
+      - {x: -0.22, y: -0.06}
+      - {x: -0.22, y: -0.11}
+      - {x: -0.11, y: -0.23}
+      - {x: -0.06, y: -0.23}
+      - {x: 0.23, y: 0.06}
+      - {x: 0.23, y: 0.1}
