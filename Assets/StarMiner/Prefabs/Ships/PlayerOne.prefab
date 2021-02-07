@@ -101,9 +101,11 @@ GameObject:
   - component: {fileID: 4583736546751470}
   - component: {fileID: 212355452888072584}
   - component: {fileID: 58700672332418450}
-  - component: {fileID: 114323213469053274}
   - component: {fileID: 50731914093925964}
+  - component: {fileID: 114323213469053274}
   - component: {fileID: 114032926160404066}
+  - component: {fileID: -6939162988146358962}
+  - component: {fileID: 6358041957666896815}
   m_Layer: 8
   m_Name: PlayerOne
   m_TagString: Player
@@ -195,50 +197,6 @@ CircleCollider2D:
   m_Offset: {x: -0.0015695095, y: -0.020501018}
   serializedVersion: 2
   m_Radius: 0.22
---- !u!114 &114323213469053274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500781721601600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33c09fe7b5fdee04da54965690469175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 15
-  credits: 1000
-  godMode: 0
-  docked: 0
-  fuel: 100
-  fuelPenaltyCooldown: 0
-  maxFuel: 100
-  health: 100
-  maxHealth: 100
-  type2Laser: 0
-  dualLaser: 0
-  cargoSize: 3
-  cargo: 
-  rb: {fileID: 50731914093925964}
-  UI: {fileID: 0}
-  exhaust: {fileID: 4631325590576758}
-  effect: {fileID: 0}
-  shieldEffect: {fileID: 0}
-  flames: {fileID: 1856210690322292, guid: 574c4b33b628fb844a0de079668a0f12, type: 3}
-  shield: {fileID: 3269776489116748036, guid: 441283888c3e24c4d952fd4a3139c060, type: 3}
-  ironText: {fileID: 1612076208901930, guid: ca99708e577d382468268b4c153766a1, type: 3}
-  goldText: {fileID: 1414836556191990, guid: 85c8e46389ef93d43b89d28a2f7a3ec8, type: 3}
-  diamondText: {fileID: 1650421845434236, guid: b2d51261fbca0144da5030f601643f02,
-    type: 3}
-  crystalText: {fileID: 1827173571979410, guid: 32b601856c462a249a576e70942b6ea2,
-    type: 3}
-  unknownText: {fileID: 1892284825471572, guid: 36c4b7d3a8b837b42be68cc5d42b9cd3,
-    type: 3}
-  fuelText: {fileID: 1963750984134448, guid: 456db347166cd494e88a67a9a4c62076, type: 3}
-  cargoFullText: {fileID: 2389820149031250171, guid: 38ff25570aa2b8b4f884ff26d9613310,
-    type: 3}
-  shop: {fileID: 0}
 --- !u!50 &50731914093925964
 Rigidbody2D:
   serializedVersion: 4
@@ -260,6 +218,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &114323213469053274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500781721601600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c09fe7b5fdee04da54965690469175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  credits: 1000
+  godMode: 0
+  fuel: 100
+  fuelPenaltyCooldown: 0
+  maxFuel: 100
+  health: 100
+  maxHealth: 100
+  type2Laser: 0
+  dualLaser: 0
+  rb: {fileID: 50731914093925964}
+  UI: {fileID: 0}
 --- !u!114 &114032926160404066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,11 +255,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 114323213469053274}
   firePoint: {fileID: 4701490719356966}
+  firePointRight: {fileID: 0}
+  firePointLeft: {fileID: 0}
   smallLaser: {fileID: 1823081920281644, guid: d7cd0e9d212c4c44a93406a50531a421, type: 3}
   bigLaser: {fileID: 7077198595304666987, guid: 446211de84c3c0043854a6c26f09faa3,
     type: 3}
   laserCooldown: 0
   bulletforce: 20
+--- !u!114 &-6939162988146358962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500781721601600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a920e2a5c9244469ed607f24786e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuel: 0
+  maxSpeed: 0
+  flames: {fileID: 0}
+  effect: {fileID: 0}
+  rb: {fileID: 0}
+  exhaust: {fileID: 0}
+  UI: {fileID: 0}
+  docked: 0
+  shop: {fileID: 0}
+--- !u!114 &6358041957666896815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500781721601600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8a2990d14b292439fdd51a4b657689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  shield: {fileID: 3269776489116748036, guid: 441283888c3e24c4d952fd4a3139c060, type: 3}
+  rb: {fileID: 50731914093925964}
+  ironText: {fileID: 0}
+  goldText: {fileID: 0}
+  diamondText: {fileID: 0}
+  crystalText: {fileID: 0}
+  unknownText: {fileID: 0}
+  fuelText: {fileID: 0}
+  cargoFullText: {fileID: 0}
+  shop: {fileID: 0}
+  docked: 0
+  cargoSize: 0
+  cargo: 
 --- !u!1 &1513846955017774
 GameObject:
   m_ObjectHideFlags: 0

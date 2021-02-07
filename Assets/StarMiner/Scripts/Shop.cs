@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour {
 
     public Player player;
+    public PlayerInteractions playerInteractions;
     public Planet planet;
 
     public GameObject planetIcon;
@@ -32,36 +33,37 @@ public class Shop : MonoBehaviour {
 
     void Start() {
         player = FindObjectOfType<Player>().GetComponent<Player>();
+        playerInteractions = FindObjectOfType<Player>().GetComponent<PlayerInteractions>();
         gameObject.SetActive(false);
     }
 
     public void SellIron() {
-        player.credits += planet.ironPrice * player.cargo[0];
-        player.cargo[0] = 0;
+        player.credits += planet.ironPrice * playerInteractions.cargo[0];
+        playerInteractions.cargo[0] = 0;
         updateShop();
     }
 
     public void SellGold() {
-        player.credits += planet.goldPrice * player.cargo[1];
-        player.cargo[1] = 0;
+        player.credits += planet.goldPrice * playerInteractions.cargo[1];
+        playerInteractions.cargo[1] = 0;
         updateShop();
     }
 
     public void SellDiamond() {
-        player.credits += planet.diamondPrice * player.cargo[2];
-        player.cargo[2] = 0;
+        player.credits += planet.diamondPrice * playerInteractions.cargo[2];
+        playerInteractions.cargo[2] = 0;
         updateShop();
     }
 
     public void SellCrystal() {
-        player.credits += planet.crystalPrice * player.cargo[3];
-        player.cargo[3] = 0;
+        player.credits += planet.crystalPrice * playerInteractions.cargo[3];
+        playerInteractions.cargo[3] = 0;
         updateShop();
     }
 
     public void SellUnknown() {
-        player.credits += planet.unknownPrice * player.cargo[4];
-        player.cargo[4] = 0;
+        player.credits += planet.unknownPrice * playerInteractions.cargo[4];
+        playerInteractions.cargo[4] = 0;
         updateShop();
     }
 
@@ -102,7 +104,7 @@ public class Shop : MonoBehaviour {
     public void buyExtendCargo() {
         if (player.credits >= 900) {
             player.credits -= 900;
-            player.cargoSize += 3;
+            playerInteractions.cargoSize += 3;
             updateShop();
         }
     }
@@ -110,7 +112,7 @@ public class Shop : MonoBehaviour {
     public void buyTARDISCargo() {
         if (player.credits >= 900) {
             player.credits -= 900;
-            player.cargoSize += 3;
+            playerInteractions.cargoSize += 3;
             updateShop();
         }
     }
@@ -163,11 +165,11 @@ public class Shop : MonoBehaviour {
     }
 
     public void updateShop() {
-        ironAmount.text = player.cargo[0].ToString();
-        goldAmount.text = player.cargo[1].ToString();
-        diamondAmount.text = player.cargo[2].ToString();
-        crystalAmount.text = player.cargo[3].ToString();
-        unknownAmount.text = player.cargo[4].ToString();
+        ironAmount.text = playerInteractions.cargo[0].ToString();
+        goldAmount.text = playerInteractions.cargo[1].ToString();
+        diamondAmount.text = playerInteractions.cargo[2].ToString();
+        crystalAmount.text = playerInteractions.cargo[3].ToString();
+        unknownAmount.text = playerInteractions.cargo[4].ToString();
         credits.text = player.credits.ToString("F2");
         fuel.text = player.fuel.ToString("F2");
         maxFuel.text = player.maxFuel.ToString();
