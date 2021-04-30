@@ -108,7 +108,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 39bfc97a48c8ae94fb4aa6bb0dad6068, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
@@ -152,6 +152,8 @@ MonoBehaviour:
   health: 100
   player: {fileID: 1500781721601600, guid: 6fde2f21b1288d446bd6f42df97fb8e5, type: 3}
   shield: {fileID: 3269776489116748036, guid: 441283888c3e24c4d952fd4a3139c060, type: 3}
+  explosion: {fileID: 1571457190627579970, guid: 8ea74bac9a2c87b4b8d18ec2b95510cd,
+    type: 3}
 --- !u!114 &114248982614814600
 MonoBehaviour:
   m_ObjectHideFlags: 0

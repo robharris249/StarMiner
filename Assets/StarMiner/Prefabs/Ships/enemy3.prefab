@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 256358317
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 209be02b3fa440c4cafbc2a5c9f8e148, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e24ecf9478604b1428ac67fc5727913c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,6 +122,8 @@ MonoBehaviour:
   health: 100
   player: {fileID: 1500781721601600, guid: 6fde2f21b1288d446bd6f42df97fb8e5, type: 3}
   shield: {fileID: 3269776489116748036, guid: 441283888c3e24c4d952fd4a3139c060, type: 3}
+  explosion: {fileID: 4763456199452774322, guid: 09d0af8084678c042bf2c76c95d52532,
+    type: 3}
 --- !u!114 &114450909657487518
 MonoBehaviour:
   m_ObjectHideFlags: 0

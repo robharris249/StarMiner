@@ -47,6 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>4.9.1.0</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>WebGL:20</UnityBuildTarget>
     <UnityVersion>2019.4.1f1</UnityVersion>
@@ -67,6 +68,7 @@
     <Compile Include="Assets\StarMiner\Scripts\AudioManager.cs" />
     <Compile Include="Assets\StarMiner\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\StarMiner\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\StarMiner\Scripts\Enemy.cs" />
     <Compile Include="Assets\StarMiner\Scripts\EnemyLaser.cs" />
     <Compile Include="Assets\StarMiner\Scripts\InstructionsMenu.cs" />
     <Compile Include="Assets\StarMiner\Scripts\Laser.cs" />
@@ -81,7 +83,6 @@
     <Compile Include="Assets\StarMiner\Scripts\Sound.cs" />
     <Compile Include="Assets\StarMiner\Scripts\Spawner.cs" />
     <Compile Include="Assets\StarMiner\Scripts\UI.cs" />
-    <Compile Include="Assets\StarMiner\Scripts\enemy.cs" />
     <Compile Include="Assets\StarMiner\Scripts\enemyShoot.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

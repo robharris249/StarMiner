@@ -3050,6 +3050,36 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114363874027608574, guid: 1b091aae7be7cef48919eee05907258d,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363874027608574, guid: 1b091aae7be7cef48919eee05907258d,
+        type: 3}
+      propertyPath: sounds.Array.data[8].name
+      value: EnemyDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363874027608574, guid: 1b091aae7be7cef48919eee05907258d,
+        type: 3}
+      propertyPath: sounds.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+    - target: {fileID: 114363874027608574, guid: 1b091aae7be7cef48919eee05907258d,
+        type: 3}
+      propertyPath: sounds.Array.data[8].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363874027608574, guid: 1b091aae7be7cef48919eee05907258d,
+        type: 3}
+      propertyPath: sounds.Array.data[8].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114363874027608574, guid: 1b091aae7be7cef48919eee05907258d,
+        type: 3}
+      propertyPath: sounds.Array.data[4].loop
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b091aae7be7cef48919eee05907258d, type: 3}
 --- !u!1 &325248253

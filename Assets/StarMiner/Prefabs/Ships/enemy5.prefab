@@ -122,6 +122,8 @@ MonoBehaviour:
   health: 100
   player: {fileID: 1500781721601600, guid: 6fde2f21b1288d446bd6f42df97fb8e5, type: 3}
   shield: {fileID: 3269776489116748036, guid: 441283888c3e24c4d952fd4a3139c060, type: 3}
+  explosion: {fileID: 4601529055745392084, guid: 4414f69ed2ac65d4e82c31d2d2e10610,
+    type: 3}
 --- !u!114 &114311448112585432
 MonoBehaviour:
   m_ObjectHideFlags: 0
