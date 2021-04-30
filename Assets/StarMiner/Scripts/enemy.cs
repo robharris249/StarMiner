@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class enemy : MonoBehaviour {
 
 	public int health;
 	private bool onScreen = false;
