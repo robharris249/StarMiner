@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4802329058353836}
   - component: {fileID: 212674043636566788}
   - component: {fileID: 4121531969427641204}
+  - component: {fileID: -1789054813664940095}
   m_Layer: 0
   m_Name: Iron
   m_TagString: Iron
@@ -115,3 +116,25 @@ PolygonCollider2D:
       - {x: -0.06, y: -0.23}
       - {x: 0.23, y: 0.06}
       - {x: 0.23, y: 0.1}
+--- !u!114 &-1789054813664940095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417846891466788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ff4751296052348a41a886e075e3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ironText: {fileID: 1612076208901930, guid: ca99708e577d382468268b4c153766a1, type: 3}
+  goldText: {fileID: 1414836556191990, guid: 85c8e46389ef93d43b89d28a2f7a3ec8, type: 3}
+  diamondText: {fileID: 1650421845434236, guid: b2d51261fbca0144da5030f601643f02,
+    type: 3}
+  crystalText: {fileID: 1827173571979410, guid: 32b601856c462a249a576e70942b6ea2,
+    type: 3}
+  unknownText: {fileID: 1892284825471572, guid: 36c4b7d3a8b837b42be68cc5d42b9cd3,
+    type: 3}
+  cargoFullText: {fileID: 2389820149031250171, guid: 38ff25570aa2b8b4f884ff26d9613310,
+    type: 3}

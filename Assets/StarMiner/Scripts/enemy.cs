@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
 	public int health;
+	private bool onScreen = false;
 
 	public GameObject player;
 	public GameObject shield; //for shield effect to be instaniated
@@ -21,7 +22,7 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(Time.timeScale == 1) {
+		if(Time.timeScale == 1 && onScreen) {
 			Vector3 vectorToTarget = player.transform.position - transform.position;
 			float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 			Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -36,7 +37,15 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
+    private void OnBecameInvisible() {
+		onScreen = false;
+    }
+
+    private void OnBecameVisible() {
+		onScreen = true;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
 		if(collision.collider.tag == "SmallLaser") {
 			health -= 20;
 

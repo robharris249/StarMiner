@@ -7,10 +7,13 @@ ScriptsOnlyBuild:
     - InstructionsMenu
     - Laser
     - MainMenu
+    - Mineral
     - Parallax
     - Planet
     - PlanetBoundary
     - Player
+    - PlayerControls
+    - PlayerInteractions
     - Shooting
     - Shop
     - Spawner
@@ -38,8 +41,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
-    com.unity.multiplayer-hlapi.Runtime.dll:
-    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/StarMiner/Scenes/Instructions.unity:
     - Class: 1
@@ -63,17 +64,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11546}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11794}
+      Script: {instanceID: 11800}
     - Class: 114
-      Script: {instanceID: 12098}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12694}
+      Script: {instanceID: 12700}
     - Class: 114
-      Script: {instanceID: 13332}
+      Script: {instanceID: 13338}
     - Class: 114
-      Script: {instanceID: 13840}
+      Script: {instanceID: 13846}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -138,45 +139,51 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11546}
+      Script: {instanceID: 11448}
     - Class: 114
-      Script: {instanceID: 11682}
+      Script: {instanceID: 11458}
     - Class: 114
-      Script: {instanceID: 11906}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11686}
     - Class: 114
-      Script: {instanceID: 12098}
+      Script: {instanceID: 11728}
     - Class: 114
-      Script: {instanceID: 12190}
+      Script: {instanceID: 11912}
     - Class: 114
-      Script: {instanceID: 12568}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12590}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12594}
+      Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12616}
+      Script: {instanceID: 12574}
     - Class: 114
-      Script: {instanceID: 12694}
+      Script: {instanceID: 12596}
     - Class: 114
-      Script: {instanceID: 12760}
+      Script: {instanceID: 12600}
     - Class: 114
-      Script: {instanceID: 12792}
+      Script: {instanceID: 12622}
     - Class: 114
-      Script: {instanceID: 12874}
+      Script: {instanceID: 12700}
     - Class: 114
-      Script: {instanceID: 13324}
+      Script: {instanceID: 12766}
     - Class: 114
-      Script: {instanceID: 13332}
+      Script: {instanceID: 12798}
     - Class: 114
-      Script: {instanceID: 13414}
+      Script: {instanceID: 12880}
     - Class: 114
-      Script: {instanceID: 13822}
+      Script: {instanceID: 13330}
     - Class: 114
-      Script: {instanceID: 13840}
+      Script: {instanceID: 13338}
+    - Class: 114
+      Script: {instanceID: 13420}
+    - Class: 114
+      Script: {instanceID: 13828}
+    - Class: 114
+      Script: {instanceID: 13846}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -223,19 +230,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11546}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 12098}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12594}
+      Script: {instanceID: 12600}
     - Class: 114
-      Script: {instanceID: 12694}
+      Script: {instanceID: 12700}
     - Class: 114
-      Script: {instanceID: 12904}
+      Script: {instanceID: 12910}
     - Class: 114
-      Script: {instanceID: 13332}
+      Script: {instanceID: 13338}
     - Class: 114
-      Script: {instanceID: 13840}
+      Script: {instanceID: 13846}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -293,6 +300,12 @@ ScriptsOnlyBuild:
     className: BannerPlaceholder
   - hash:
       serializedVersion: 2
+      Hash: bf9a6011453c4020d7fc51e31f64f6d0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerInteractions
+  - hash:
+      serializedVersion: 2
       Hash: 5bd9a19c7b5f76c563418e28f48a561b
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -315,6 +328,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
     namespaceName: UnityEngine.XR.LegacyInputHelpers
     className: ArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: 096fbc23988850554be3c72d25a05815
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Mineral
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -425,6 +444,12 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 0cd3e177509b01462a4bc04edf0d4ef7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerControls
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -485,7 +510,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 1902a88b3726e3643eeab50561732714
+      Hash: 528ae6793d41db480afad515203541f7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Shop
@@ -617,7 +642,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: 9adea263e88dfd82933ebbf16b49a91d
+      Hash: 4d812558f4e7deca50ed0e458a8a384f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -974,4 +999,4 @@ ScriptsOnlyBuild:
   - Assets/StarMiner/Scenes/MainMenu.unity
   - Assets/StarMiner/Scenes/Instructions.unity
   - Assets/StarMiner/Scenes/Level1.unity
-  playerPath: C:/Users/RobHa/StarMiner/Builds
+  playerPath: C:/Users/User/StarMiner/Builds
