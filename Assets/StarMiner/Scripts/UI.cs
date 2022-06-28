@@ -63,6 +63,7 @@ public class UI : MonoBehaviour {
 
 	public void menu() {
 		SceneManager.LoadScene("MainMenu");
+		Time.timeScale = 1;
 	}
 
 	public void resume() {

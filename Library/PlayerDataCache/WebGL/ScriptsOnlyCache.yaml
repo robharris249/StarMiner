@@ -3,7 +3,9 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Asteroid
     - AudioManager
+    - Enemy
     - EnemyLaser
+    - EnemyShoot
     - InstructionsMenu
     - Laser
     - MainMenu
@@ -14,13 +16,12 @@ ScriptsOnlyBuild:
     - Player
     - PlayerControls
     - PlayerInteractions
+    - PlayerRadar
     - Shooting
     - Shop
     - Spawner
     - UI
     - UnityStandardAssets._2D.Camera2DFollow
-    - enemy
-    - enemyShoot
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -41,6 +42,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
+    com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/StarMiner/Scenes/Instructions.unity:
     - Class: 1
@@ -70,11 +73,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12700}
+      Script: {instanceID: 12702}
     - Class: 114
-      Script: {instanceID: 13338}
+      Script: {instanceID: 13340}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -159,31 +162,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12574}
+      Script: {instanceID: 12412}
     - Class: 114
-      Script: {instanceID: 12596}
+      Script: {instanceID: 12576}
     - Class: 114
-      Script: {instanceID: 12600}
+      Script: {instanceID: 12598}
     - Class: 114
-      Script: {instanceID: 12622}
+      Script: {instanceID: 12602}
     - Class: 114
-      Script: {instanceID: 12700}
+      Script: {instanceID: 12624}
     - Class: 114
-      Script: {instanceID: 12766}
+      Script: {instanceID: 12702}
     - Class: 114
-      Script: {instanceID: 12798}
+      Script: {instanceID: 12768}
     - Class: 114
-      Script: {instanceID: 12880}
+      Script: {instanceID: 12800}
     - Class: 114
-      Script: {instanceID: 13330}
+      Script: {instanceID: 12882}
     - Class: 114
-      Script: {instanceID: 13338}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 13340}
     - Class: 114
-      Script: {instanceID: 13828}
+      Script: {instanceID: 13422}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13830}
+    - Class: 114
+      Script: {instanceID: 13848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -234,15 +239,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12600}
+      Script: {instanceID: 12602}
     - Class: 114
-      Script: {instanceID: 12700}
+      Script: {instanceID: 12702}
     - Class: 114
-      Script: {instanceID: 12910}
+      Script: {instanceID: 12912}
     - Class: 114
-      Script: {instanceID: 13338}
+      Script: {instanceID: 13340}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -300,7 +305,7 @@ ScriptsOnlyBuild:
     className: BannerPlaceholder
   - hash:
       serializedVersion: 2
-      Hash: bf9a6011453c4020d7fc51e31f64f6d0
+      Hash: 0c3d7db589d3de0aca1f2c3cb97c6bf5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerInteractions
@@ -444,7 +449,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 0cd3e177509b01462a4bc04edf0d4ef7
+      Hash: bd4724c71beb6cad36801359f816fc0e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerControls
@@ -570,10 +575,10 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 2dddace0e278aac919a762b5d0a4e3b3
+      Hash: 596f1e9491fc496b808b887287847cb8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: enemy
+    className: Enemy
   - hash:
       serializedVersion: 2
       Hash: 265cf27ba050d55ff33a8acab4ded6c0
@@ -610,6 +615,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: e2dede63bc564b68ae592df6cc79fa72
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerRadar
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -666,7 +677,7 @@ ScriptsOnlyBuild:
     className: AudioManager
   - hash:
       serializedVersion: 2
-      Hash: 3de1ba0c6c50b01fb6b5167be8ba9b04
+      Hash: ffddba3d66d829a38783bdcaf282068b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Planet
@@ -699,7 +710,7 @@ ScriptsOnlyBuild:
       Hash: 951be5f360972e213ec32e9c3dc23908
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: enemyShoot
+    className: EnemyShoot
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -999,4 +1010,4 @@ ScriptsOnlyBuild:
   - Assets/StarMiner/Scenes/MainMenu.unity
   - Assets/StarMiner/Scenes/Instructions.unity
   - Assets/StarMiner/Scenes/Level1.unity
-  playerPath: C:/Users/User/StarMiner/Builds
+  playerPath: C:/Users/RobHa/StarMiner/Builds

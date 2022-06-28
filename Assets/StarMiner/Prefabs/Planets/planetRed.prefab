@@ -183,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 3617623193132183281}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8787878, y: 0.8787878, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8796064074118701502}
   m_RootOrder: 2
@@ -212,7 +212,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 80, y: 80}
+  m_Size: {x: 60, y: 60}
   m_EdgeRadius: 0
 --- !u!114 &3501402777495357350
 MonoBehaviour:
@@ -254,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 8796064074118701488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: -1, z: 0}
-  m_LocalScale: {x: 0.066, y: 0.066, z: 1}
+  m_LocalScale: {x: 0.067, y: 0.067, z: 1}
   m_Children:
   - {fileID: 1058628788}
   - {fileID: 1899537040}
@@ -333,6 +333,7 @@ MonoBehaviour:
   unknownPrice: 400
   txtName: {fileID: 1058628789}
   instructions: {fileID: 1899537041}
+  shield: {fileID: 7333143641093491602, guid: 4d6508f1855249c43a18ee2129883262, type: 3}
 --- !u!58 &512277135552947679
 CircleCollider2D:
   m_ObjectHideFlags: 0

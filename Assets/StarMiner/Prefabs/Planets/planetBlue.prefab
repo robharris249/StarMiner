@@ -333,6 +333,7 @@ MonoBehaviour:
   unknownPrice: 500
   txtName: {fileID: 1965535935}
   instructions: {fileID: 872799707}
+  shield: {fileID: 7333143641093491602, guid: 4d6508f1855249c43a18ee2129883262, type: 3}
 --- !u!58 &5664541162442893575
 CircleCollider2D:
   m_ObjectHideFlags: 0

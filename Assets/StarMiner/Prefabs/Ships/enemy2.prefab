@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 114595773140224646}
   - component: {fileID: 58201486903755018}
   m_Layer: 0
-  m_Name: enemy2
+  m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1365353437081092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 4231046528984556}
   m_Father: {fileID: 0}

@@ -184,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 651587015194885223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4, y: -1, z: 0}
-  m_LocalScale: {x: 0.066, y: 0.066, z: 1}
+  m_LocalScale: {x: 0.0666, y: 0.0666, z: 1}
   m_Children:
   - {fileID: 1302603214}
   - {fileID: 1041242418}
@@ -263,6 +263,7 @@ MonoBehaviour:
   unknownPrice: 600
   txtName: {fileID: 1302603215}
   instructions: {fileID: 1041242419}
+  shield: {fileID: 7333143641093491602, guid: 4d6508f1855249c43a18ee2129883262, type: 3}
 --- !u!58 &8533251409293569711
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -335,7 +336,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 80, y: 80}
+  m_Size: {x: 68, y: 68}
   m_EdgeRadius: 0
 --- !u!114 &7303677565696099706
 MonoBehaviour:
