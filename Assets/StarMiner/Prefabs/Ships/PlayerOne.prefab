@@ -106,6 +106,8 @@ GameObject:
   - component: {fileID: 114032926160404066}
   - component: {fileID: -6939162988146358962}
   - component: {fileID: 6358041957666896815}
+  - component: {fileID: 1556435125}
+  - component: {fileID: 1556435128}
   m_Layer: 8
   m_Name: PlayerOne
   m_TagString: Player
@@ -214,7 +216,7 @@ Rigidbody2D:
   m_AngularDrag: 2
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 8be6341e1ce3f4cec9902bc34f72d20a, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -230,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c09fe7b5fdee04da54965690469175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credits: 1000
+  credits: 0
   godMode: 0
   fuel: 100
   fuelPenaltyCooldown: 0
@@ -255,8 +257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 114323213469053274}
   firePoint: {fileID: 4701490719356966}
-  firePointRight: {fileID: 0}
-  firePointLeft: {fileID: 0}
+  firePointRight: {fileID: 63436808}
+  firePointLeft: {fileID: 1822223490}
   smallLaser: {fileID: 1823081920281644, guid: d7cd0e9d212c4c44a93406a50531a421, type: 3}
   bigLaser: {fileID: 7077198595304666987, guid: 446211de84c3c0043854a6c26f09faa3,
     type: 3}
@@ -274,15 +276,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a920e2a5c9244469ed607f24786e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuel: 0
-  maxSpeed: 0
-  flames: {fileID: 0}
-  effect: {fileID: 0}
-  rb: {fileID: 0}
-  exhaust: {fileID: 0}
+  maxSpeed: 10
+  flames: {fileID: 1856210690322292, guid: 574c4b33b628fb844a0de079668a0f12, type: 3}
+  rb: {fileID: 50731914093925964}
+  exhaust: {fileID: 4631325590576758}
   UI: {fileID: 0}
   docked: 0
   shop: {fileID: 0}
+  radar: {fileID: 8578996680593310180, guid: b591fb33b5abc024780fbc366253de4d, type: 3}
 --- !u!114 &6358041957666896815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,20 +296,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8a2990d14b292439fdd51a4b657689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  shieldEffects: []
   shield: {fileID: 3269776489116748036, guid: 441283888c3e24c4d952fd4a3139c060, type: 3}
   rb: {fileID: 50731914093925964}
-  ironText: {fileID: 0}
-  goldText: {fileID: 0}
-  diamondText: {fileID: 0}
-  crystalText: {fileID: 0}
-  unknownText: {fileID: 0}
-  fuelText: {fileID: 0}
-  cargoFullText: {fileID: 0}
   shop: {fileID: 0}
-  docked: 0
-  cargoSize: 0
+  cargoSize: 5
   cargo: 
+--- !u!95 &1556435125
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500781721601600}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fd8fa405bb9f33a40b734a8e5cae256f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1556435128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500781721601600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5440e1c6d1ddd2f4a93b3a61748c536a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closestPlanets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  planetArrows:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  searching: 0
+  updateTargetsTimer: 10
 --- !u!1 &1513846955017774
 GameObject:
   m_ObjectHideFlags: 0

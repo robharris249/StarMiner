@@ -13,7 +13,7 @@ public class PlayerControls : MonoBehaviour {
 	public bool docked;
 	public GameObject shop;
 	public GameObject radar;
-	private GameObject radarEffect;
+	GameObject radarEffect;
 
     // Update is called once per frame
     void FixedUpdate() {
@@ -73,7 +73,7 @@ public class PlayerControls : MonoBehaviour {
 				
 				if (GetComponent<Player>().fuel > 0) {
 					exhaustEffect.transform.position = exhaust.position;
-					exhaustEffect.transform.rotation = gameObject.transform.rotation * Quaternion.Euler(0, 0, 90);
+					exhaustEffect.transform.rotation = transform.rotation * Quaternion.Euler(0, 0, 90);
 				} else {
 					GetComponent<Player>().fuel = 0;
 					FindObjectOfType<AudioManager>().Stop("PlayerEngine");
@@ -87,11 +87,15 @@ public class PlayerControls : MonoBehaviour {
 			}
 
 			if (Input.GetKeyDown(KeyCode.S)) {
+
 				FindObjectOfType<AudioManager>().Play("PlayerEngine");
 			}
 
 			if (Input.GetKey(KeyCode.S)) {
-				GetComponent<Player>().fuel -= 0.02f;//2mins 40secs of fuel at this rate
+
+				if (!docked) {
+					GetComponent<Player>().fuel -= Time.deltaTime;
+				}
 
 				if (GetComponent<Player>().fuel < 0) {
 					GetComponent<Player>().fuel = 0;
@@ -110,18 +114,20 @@ public class PlayerControls : MonoBehaviour {
 			}
 
 			if(Input.GetKeyDown(KeyCode.R)) {
+
+				
 				if(!GetComponent<PlayerRadar>().searching) {
 					FindObjectOfType<AudioManager>().Play("Radar");
 					radarEffect = Instantiate(radar, transform.position, Quaternion.identity);
 					Destroy(radarEffect, 2.8f);
 					GetComponent<PlayerRadar>().GetThreeClosestPlanets();
 				} else {
-
+										
 					if(radarEffect != null) {
 						Destroy(radarEffect);
 						FindObjectOfType<AudioManager>().Stop("Radar");
 					}
-
+					
 					GetComponent<PlayerRadar>().planetArrows[0].SetActive(false);
 					GetComponent<PlayerRadar>().planetArrows[1].SetActive(false);
 					GetComponent<PlayerRadar>().planetArrows[2].SetActive(false);
@@ -130,12 +136,15 @@ public class PlayerControls : MonoBehaviour {
 					GetComponent<PlayerRadar>().closestPlanets[2].GetComponent<Planet>().arrow.SetActive(false);
 				}
 				GetComponent<PlayerRadar>().searching = !GetComponent<PlayerRadar>().searching;//flip state
+
+				
 			}
 
 			
 			if(radarEffect != null) {
 				radarEffect.transform.position = transform.position;
             }
+			
 			
 		}
 

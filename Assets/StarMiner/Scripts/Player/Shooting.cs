@@ -54,6 +54,6 @@ public class Shooting : MonoBehaviour {
 			FindObjectOfType<AudioManager>().Play("PlayerSmallShoot");
 		}
 
-		
-    }
+
+	}
 }

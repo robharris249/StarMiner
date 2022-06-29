@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerRadar : MonoBehaviour {
 
     public GameObject[] closestPlanets = new GameObject[3];
-    Vector3[] edgePoints = new Vector3[3];
 
     public GameObject[] planetArrows = new GameObject[3];
 
@@ -30,7 +29,7 @@ public class PlayerRadar : MonoBehaviour {
     public void GetThreeClosestPlanets() {
         GameObject[] planets = GameObject.FindGameObjectsWithTag("Planet");
 
-        Vector3 currentPosition = gameObject.transform.position;
+        Vector3 currentPosition = transform.position;
         closestPlanets[0] = planets[0];
 
         for (int i = 1; i < planets.Length; i++) {
@@ -80,7 +79,7 @@ public class PlayerRadar : MonoBehaviour {
                 planetArrows[i].SetActive(true);
                 planetArrows[i].transform.position = hitPoint;
 
-                Vector3 vectorToTarget = hitPoint - transform.position;
+                Vector3 vectorToTarget = hitPoint - origin;
                 float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
                 Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
                 planetArrows[i].transform.rotation = q;
