@@ -301,7 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 256358317
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 34a96e9161a1c814592cb722e701f6fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e898cd86d49eb1c48a6968ec56449eb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -350,3 +350,5 @@ MonoBehaviour:
   txtName: {fileID: 1348091422}
   instructions: {fileID: 1421734922}
   shield: {fileID: 7333143641093491602, guid: 4d6508f1855249c43a18ee2129883262, type: 3}
+  onScreen: 0
+  arrow: {fileID: 0}

@@ -29,7 +29,7 @@ public class Shooting : MonoBehaviour {
 				laserCooldown = 0;
 			}
 
-			if (Input.GetKey(KeyCode.Space) && laserCooldown == 0) {
+			if (Input.GetKey(KeyCode.Space) && laserCooldown == 0 && !GetComponent<PlayerControls>().docked) {
 				shoot();
 				if(player.godMode) {
 					laserCooldown = 0.05f;

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Planet : MonoBehaviour {
 
     public GameObject shop;
-    public GameObject icon;
 
     public float ironPrice;
     public float goldPrice;

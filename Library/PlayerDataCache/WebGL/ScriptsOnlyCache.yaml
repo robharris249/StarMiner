@@ -42,8 +42,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
-    com.unity.multiplayer-hlapi.Runtime.dll:
-    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/StarMiner/Scenes/Instructions.unity:
     - Class: 1
@@ -65,19 +63,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11264}
+      Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11552}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11802}
+      Script: {instanceID: 11800}
     - Class: 114
-      Script: {instanceID: 12106}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12704}
+      Script: {instanceID: 12702}
     - Class: 114
-      Script: {instanceID: 13342}
+      Script: {instanceID: 13340}
     - Class: 114
-      Script: {instanceID: 13850}
+      Script: {instanceID: 13848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -140,55 +138,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11264}
+      Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11348}
+      Script: {instanceID: 11346}
     - Class: 114
-      Script: {instanceID: 11450}
+      Script: {instanceID: 11448}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11458}
     - Class: 114
-      Script: {instanceID: 11552}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11688}
+      Script: {instanceID: 11686}
     - Class: 114
-      Script: {instanceID: 11730}
+      Script: {instanceID: 11728}
     - Class: 114
-      Script: {instanceID: 11914}
+      Script: {instanceID: 11912}
     - Class: 114
-      Script: {instanceID: 11974}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12106}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 12196}
     - Class: 114
-      Script: {instanceID: 12414}
+      Script: {instanceID: 12412}
     - Class: 114
-      Script: {instanceID: 12578}
+      Script: {instanceID: 12576}
     - Class: 114
-      Script: {instanceID: 12600}
+      Script: {instanceID: 12598}
     - Class: 114
-      Script: {instanceID: 12604}
+      Script: {instanceID: 12602}
     - Class: 114
-      Script: {instanceID: 12626}
+      Script: {instanceID: 12624}
     - Class: 114
-      Script: {instanceID: 12704}
+      Script: {instanceID: 12702}
     - Class: 114
-      Script: {instanceID: 12770}
+      Script: {instanceID: 12768}
     - Class: 114
-      Script: {instanceID: 12802}
+      Script: {instanceID: 12800}
     - Class: 114
-      Script: {instanceID: 12884}
+      Script: {instanceID: 12882}
     - Class: 114
-      Script: {instanceID: 13334}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13342}
+      Script: {instanceID: 13340}
     - Class: 114
-      Script: {instanceID: 13424}
+      Script: {instanceID: 13422}
     - Class: 114
-      Script: {instanceID: 13832}
+      Script: {instanceID: 13830}
     - Class: 114
-      Script: {instanceID: 13850}
+      Script: {instanceID: 13848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -233,21 +231,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11242}
     - Class: 114
-      Script: {instanceID: 11264}
+      Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11552}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 12106}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12604}
+      Script: {instanceID: 12602}
     - Class: 114
-      Script: {instanceID: 12704}
+      Script: {instanceID: 12702}
     - Class: 114
-      Script: {instanceID: 12914}
+      Script: {instanceID: 12912}
     - Class: 114
-      Script: {instanceID: 13342}
+      Script: {instanceID: 13340}
     - Class: 114
-      Script: {instanceID: 13850}
+      Script: {instanceID: 13848}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -677,7 +675,7 @@ ScriptsOnlyBuild:
     className: AudioManager
   - hash:
       serializedVersion: 2
-      Hash: ffddba3d66d829a38783bdcaf282068b
+      Hash: 2633f76a9c140931781f69e3bddaca89
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Planet

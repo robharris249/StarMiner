@@ -154,8 +154,8 @@ public class Shop : MonoBehaviour {
 
     public void setUpShop() {
 
-        planetIcon.GetComponent<SpriteRenderer>().sprite = planet.icon.GetComponent<SpriteRenderer>().sprite;
-        planetIcon.transform.localScale = planet.icon.transform.localScale;
+        planetIcon.GetComponent<SpriteRenderer>().sprite = planet.GetComponent<SpriteRenderer>().sprite;//Grab Sprite of Planet
+        planetIcon.transform.localScale = planet.transform.localScale * 63;//Scale down sprite to fit into icon square
 
         planetName.text = planet.gameObject.name;
 
@@ -164,7 +164,6 @@ public class Shop : MonoBehaviour {
         diamondPrice.text = planet.diamondPrice.ToString();
         crystalPrice.text = planet.crystalPrice.ToString();
         unknownPrice.text = planet.unknownPrice.ToString();
-
 
         updateShop();
     }
