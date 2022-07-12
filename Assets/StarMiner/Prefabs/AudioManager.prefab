@@ -70,7 +70,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme
     clip: {fileID: 8300000, guid: e83f91551c6cf6d46bbc188d796b1ee6, type: 3}
-    volume: 0
+    volume: 0.5
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -119,6 +119,18 @@ MonoBehaviour:
   - name: Radar
     clip: {fileID: 8300000, guid: a1f0d82e7d8dc0b409a5347f8c92378d, type: 3}
     volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShieldWoosh
+    clip: {fileID: 8300000, guid: 1ed84389bc70c4afab4cf4e773ef8914, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShieldRestore
+    clip: {fileID: 8300000, guid: a5e779c7c129d44768a86a5e8e6eea90, type: 3}
+    volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}

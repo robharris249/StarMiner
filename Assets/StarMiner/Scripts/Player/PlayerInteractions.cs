@@ -46,15 +46,16 @@ public class PlayerInteractions : MonoBehaviour {
 			Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
 
 			GameObject shieldEffect = Instantiate(shield, transform.position, q * Quaternion.Euler(0, 0, -90));
-			Destroy(shieldEffect, 0.5f);
+			Destroy(shieldEffect, 1.0f);
 			shieldEffects.Add(shieldEffect);
 
 			if(collision.collider.tag == "Asteroid") {
 				GetComponent<Player>().health -= 1;
 			} else {
 				GetComponent<Player>().health -= 5;
-				FindObjectOfType<AudioManager>().Play("AsteroidHit");
 			}
+
+			FindObjectOfType<AudioManager>().Play("ShieldWoosh");
 		}
 	}
 

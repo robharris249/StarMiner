@@ -123,28 +123,33 @@ public class Shop : MonoBehaviour {
     }
 
     public void repair() {
-        float cost = (player.maxHealth - player.health) * 2.5f;
-        if(player.credits >= cost) {
-            player.credits -= cost;
-            player.health = player.maxHealth;
-        } else {
-            player.health += (int)(player.credits / 2.5f);
-            player.credits = 0;
+        if(player.credits > 0 && player.health != player.maxHealth) {
+            float cost = (player.maxHealth - player.health) * 2.5f;
+            if (player.credits >= cost) {
+                player.credits -= cost;
+                player.health = player.maxHealth;
+            } else {
+                player.health += (int)(player.credits / 2.5f);
+                player.credits = 0;
+            }
+            FindObjectOfType<AudioManager>().Play("ShieldRestore");
+            updateShop();
         }
-        updateShop();
     }
 
     public void refuel() {
-        float cost = (player.maxFuel - player.fuel) * 2.5f;
-        if (player.credits >= cost) {
-            player.credits -= cost;
-            player.fuel = player.maxFuel;
-        } else {
-            player.fuel += player.credits / 2.5f;
-            player.credits = 0;
+        if (player.credits > 0 && player.fuel != player.maxFuel) {
+            float cost = (player.maxFuel - player.fuel) * 2.5f;
+            if (player.credits >= cost) {
+                player.credits -= cost;
+                player.fuel = player.maxFuel;
+            } else {
+                player.fuel += player.credits / 2.5f;
+                player.credits = 0;
+            }
+            FindObjectOfType<AudioManager>().Play("Fuelup");
+            updateShop();
         }
-        FindObjectOfType<AudioManager>().Play("Fuelup");
-        updateShop();
     }
 
     public void Launch() {
