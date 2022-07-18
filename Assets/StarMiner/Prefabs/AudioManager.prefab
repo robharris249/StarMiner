@@ -58,13 +58,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: AsteroidHit
     clip: {fileID: 8300000, guid: 38eb3ce977e73a54a8b2c638bc63509e, type: 3}
-    volume: 0.777
+    volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: AsteroidDestroy
     clip: {fileID: 8300000, guid: e7cb68da88d8b274eb008f9a214589d8, type: 3}
-    volume: 0.777
+    volume: 0.6
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: EnemyDeath
     clip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
-    volume: 0.5
+    volume: 0.1
     pitch: 1
     loop: 0
     source: {fileID: 0}
