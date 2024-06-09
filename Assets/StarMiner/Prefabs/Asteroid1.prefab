@@ -144,7 +144,7 @@ MonoBehaviour:
   Diamond: {fileID: 1898319199122514, guid: c1e8533ba7b5c244882fe06fa16d13e5, type: 3}
   mysteriousCrystal: {fileID: 621068689645952095, guid: a413ccac81d959d4ca3f90b8e362b084,
     type: 3}
-  Unknown: {fileID: 1697413958704606, guid: 754bc72a1ea9a2d449b31b4ea9220c51, type: 3}
+  Unknown: {fileID: 762468676085969173, guid: afe5ad678f98af14a96dac7c69123dd9, type: 3}
   cracked1: {fileID: 21300000, guid: 66dac682e65f0034d9304ad38a5352c7, type: 3}
   cracked2: {fileID: 21300000, guid: b40d4b7bcab5d2948b8cac7e92780282, type: 3}
   cracked3: {fileID: 21300000, guid: dfa43a450b1e37444a22c56564dc183d, type: 3}

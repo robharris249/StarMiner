@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Mineral : MonoBehaviour {
 
-	public GameObject ironText;
-	public GameObject goldText;
-	public GameObject diamondText;
-	public GameObject crystalText;
-	public GameObject unknownText;
+	public GameObject mineralText;
 	public GameObject cargoFullText;
 
 	private PlayerInteractions player;
+	private Vector3 offset = new Vector3(-0.35f, -0.255f, 0);
 
     private void Start() {
 		player = FindObjectOfType<Player>().GetComponent<PlayerInteractions>();
@@ -19,34 +16,33 @@ public class Mineral : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision) {
 
+
 		if(collision.tag == "Player") {
 			if (player.isCargoFull()) {
-				GameObject text = Instantiate(cargoFullText, this.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+				GameObject text = Instantiate(cargoFullText, this.transform.position + offset, Quaternion.identity);
 				Destroy(text, 0.75f);
 			} else {
+
+				spawnFloatingText(mineralText);
+
 				switch (this.tag) {
 					case "Iron":
-						spawnFloatingText(ironText);
 						player.cargo[0]++;
 						break;
 
 					case "Gold":
-						spawnFloatingText(goldText);
 						player.cargo[1]++;
 						break;
 
 					case "Diamond":
-						spawnFloatingText(diamondText);
 						player.cargo[2]++;
 						break;
 
 					case "mysterousCrystal":
-						spawnFloatingText(crystalText);
 						player.cargo[3]++;
 						break;
 
 					case "Unknown":
-						spawnFloatingText(unknownText);
 						player.cargo[4]++;
 						break;
 				}
@@ -55,7 +51,7 @@ public class Mineral : MonoBehaviour {
 	}
 
 	private void spawnFloatingText(GameObject floatingText) {
-			GameObject text = Instantiate(floatingText, this.transform.position + new Vector3(-0.35f, -0.25f, 0), Quaternion.identity);
+			GameObject text = Instantiate(floatingText, this.transform.position + offset, Quaternion.identity);
 			FindObjectOfType<AudioManager>().Play("Pickup");
 			Destroy(this.gameObject);
 			Destroy(text, 0.75f);
