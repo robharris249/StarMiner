@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - SmallLaser
+  - Asteroid
+  - Iron
+  - Gold
+  - Diamond
+  - Unknown
+  - Fuel
+  - mysterousCrystal
+  - EnemyLaser
+  - Enemy
+  - Planet
+  - Wall
+  - BigLaser
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - PlayerLaser
+  - EnemyLaser
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1470888135
+    locked: 0
+  - name: Foreground
+    uniqueID: 256358317
+    locked: 0
+  - name: UI
+    uniqueID: 2795523239
+    locked: 0

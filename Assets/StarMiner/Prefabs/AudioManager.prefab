@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1244154048361416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4583294208711978}
+  - component: {fileID: 114363874027608574}
+  m_Layer: 8
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &4583294208711978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244154048361416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114363874027608574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244154048361416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a424628de13f4a46baa234e66ce8618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayerEngine
+    clip: {fileID: 8300000, guid: 065ccdc0aca78954aa5d0daf9b4adfdf, type: 3}
+    volume: 0.777
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PlayerSmallShoot
+    clip: {fileID: 8300000, guid: a421c88e31c06c24791fbcc9cd18a8db, type: 3}
+    volume: 0.777
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AsteroidHit
+    clip: {fileID: 8300000, guid: 38eb3ce977e73a54a8b2c638bc63509e, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AsteroidDestroy
+    clip: {fileID: 8300000, guid: e7cb68da88d8b274eb008f9a214589d8, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: e83f91551c6cf6d46bbc188d796b1ee6, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Pickup
+    clip: {fileID: 8300000, guid: 6a8c60075137cfd4399c724d469adb9f, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Fuelup
+    clip: {fileID: 8300000, guid: 5df93c33f97d1dc448d733ffeada2b41, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyShoot
+    clip: {fileID: 8300000, guid: 01167a1df79e7a44383bc61473be1d13, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: 5a49ae6914d919345bd222e7753ab883, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Trade
+    clip: {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerBigShoot
+    clip: {fileID: 8300000, guid: 6b8529cfb65779d4994a6768e2b3ff64, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerDualShoot
+    clip: {fileID: 8300000, guid: 352736e4a87773843acf6d1db11ac882, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Radar
+    clip: {fileID: 8300000, guid: a1f0d82e7d8dc0b409a5347f8c92378d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShieldWoosh
+    clip: {fileID: 8300000, guid: 1ed84389bc70c4afab4cf4e773ef8914, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShieldRestore
+    clip: {fileID: 8300000, guid: a5e779c7c129d44768a86a5e8e6eea90, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

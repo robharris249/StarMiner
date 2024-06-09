@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 96b14b61997360547beee11cbe1cc81d
+timeCreated: 1585522332
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - asteroid1: {fileID: 1550315878632468, guid: 15b6468723feaf1409c3daad6b3bf6f7,
+      type: 2}
+  - asteroid2: {fileID: 1247924785807652, guid: 383b91762925d3d409ec348175e8b4e4,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
