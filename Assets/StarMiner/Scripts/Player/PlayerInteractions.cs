@@ -12,7 +12,6 @@ public class PlayerInteractions : MonoBehaviour {
 
 	public GameObject shop;
 
-
 	public int cargoSize;
 	public int[] cargo;
 
@@ -31,8 +30,6 @@ public class PlayerInteractions : MonoBehaviour {
 		foreach (GameObject shieldEffect in shieldEffects) {
 			shieldEffect.transform.position = transform.position;
 		}
-
-		
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
@@ -58,7 +55,6 @@ public class PlayerInteractions : MonoBehaviour {
 			FindObjectOfType<AudioManager>().Play("ShieldWoosh");
 		}
 	}
-
 
 	void OnTriggerEnter2D(Collider2D collision) {
 		if(collision.tag == "Planet") {
@@ -86,7 +82,4 @@ public class PlayerInteractions : MonoBehaviour {
 			GetComponent<PlayerControls>().docked = false;
 		}
 	}
-
-	
-
 }

@@ -27,6 +27,7 @@ public class EnemyLaser : MonoBehaviour {
 
 			case "Player":
 				effect = Instantiate(hitEffect, collision.contacts[0].point, this.transform.rotation);
+				effect.transform.SetParent(collision.gameObject.transform);
 				Destroy(effect, 0.5f);
 				Destroy(gameObject);
 				break;
@@ -35,19 +36,6 @@ public class EnemyLaser : MonoBehaviour {
 				Destroy(gameObject);
 				break;
 		}
-		/*
-		if (collision.collider.tag == "Asteroid") {
-			GameObject effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
-			Destroy(effect, 0.5f);
-			Destroy(gameObject);
-		}
-
-		if (collision.collider.tag == "Player") {
-			GameObject effect = Instantiate(hitEffect, this.transform.position, this.transform.rotation);
-			Destroy(effect, 0.5f);
-			Destroy(gameObject);
-		}
-		*/
 	}
 
 	void Update() {
