@@ -9473,6 +9473,7 @@ MonoBehaviour:
   player: {fileID: 1158173482}
   playerInteractions: {fileID: 0}
   planet: {fileID: 0}
+  HUD: {fileID: 1272194637}
   planetIcon: {fileID: 111680246}
   planetName: {fileID: 640214001}
   ironPrice: {fileID: 1300071307}
@@ -11020,21 +11021,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1158173482}
+  creditsTextLabel: {fileID: 554830309}
   creditsText: {fileID: 1961150602}
-  gameOverScore: {fileID: 121028554}
+  healthTextLabel: {fileID: 1260294320}
   healthText: {fileID: 1199111398}
+  fuelTextLabel: {fileID: 301134237}
   fuelText: {fileID: 1031536196}
   frameRate: {fileID: 2107113741}
   enemyCount: {fileID: 633809230}
   asteroidCount: {fileID: 1400521050}
   time: {fileID: 1616324263}
+  CoordsLabel: {fileID: 377248971}
   xCoords: {fileID: 1445880307}
   yCoords: {fileID: 184002914}
+  gameOverScore: {fileID: 121028554}
   gameOver: {fileID: 727095244}
   pauseMenu: {fileID: 2006036847}
   toolsUI: {fileID: 334421781}
+  Radar: {fileID: 404061094}
   frameRateCooldown: 1
   temptime: 0
+  Shop: {fileID: 1053202530}
 --- !u!1 &1276159999
 GameObject:
   m_ObjectHideFlags: 0
@@ -17137,8 +17144,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -178.62592, y: -0.076049805}
-  m_SizeDelta: {x: -354.03217, y: -0.97514343}
+  m_AnchoredPosition: {x: -177.72098, y: -0.076049805}
+  m_SizeDelta: {x: -355.842, y: -0.97514343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838617091
 MonoBehaviour:

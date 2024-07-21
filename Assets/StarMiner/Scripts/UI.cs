@@ -7,23 +7,50 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour {
 
 	public Player player;
+	public Text creditsTextLabel;
 	public Text creditsText;
-	public Text gameOverScore;
+	public Text healthTextLabel;
 	public Text healthText;
+	public Text fuelTextLabel;
 	public Text fuelText;
 	public Text frameRate;
 	public Text enemyCount;
 	public Text asteroidCount;
 	public Text time;
+	public Text CoordsLabel;
 	public Text xCoords;
 	public Text yCoords;
+	public Text gameOverScore;
 	public GameObject gameOver;
 	public GameObject pauseMenu;
 	public GameObject toolsUI;
-	public float frameRateCooldown = 1.0f;
+    public GameObject Radar;
+    public float frameRateCooldown = 1.0f;
 	public int temptime;
+	public Shop Shop;
 
-	void Start() {
+	public void DockToggle() {
+		creditsTextLabel.gameObject.SetActive(!creditsTextLabel.gameObject.activeSelf);
+		creditsText.gameObject.SetActive(!creditsText.gameObject.activeSelf);
+		healthTextLabel.gameObject.SetActive(!healthTextLabel.gameObject.activeSelf);
+		healthText.gameObject.SetActive(!healthText.gameObject.activeSelf);
+		fuelTextLabel.gameObject.SetActive(!fuelTextLabel.gameObject.activeSelf);
+		fuelText.gameObject.SetActive(!fuelText.gameObject.activeSelf);
+		CoordsLabel.gameObject.SetActive(!CoordsLabel.gameObject.activeSelf);
+		xCoords.gameObject.SetActive(!xCoords.gameObject.activeSelf);
+		yCoords.gameObject.SetActive(!yCoords.gameObject.activeSelf);
+		player.GetComponent<PlayerRadar>().planetArrows[0].gameObject.SetActive(false);
+		player.GetComponent<PlayerRadar>().planetArrows[1].gameObject.SetActive(false);
+		player.GetComponent<PlayerRadar>().planetArrows[2].gameObject.SetActive(false);
+        player.GetComponent<PlayerRadar>().closestPlanets[0].GetComponent<Planet>().arrow.SetActive(false);
+        player.GetComponent<PlayerRadar>().closestPlanets[1].GetComponent<Planet>().arrow.SetActive(false);
+        player.GetComponent<PlayerRadar>().closestPlanets[2].GetComponent<Planet>().arrow.SetActive(false);
+		player.GetComponent<PlayerRadar>().searching = false;
+		Shop.planet.txtName.gameObject.SetActive(!Shop.planet.txtName.gameObject.activeSelf);
+		Shop.planet.instructions.gameObject.SetActive(!Shop.planet.instructions.gameObject.activeSelf);
+    }
+
+    void Start() {
 		enemyCount.text = FindObjectOfType<Spawner>().enemyCount.ToString();
 		asteroidCount.text = FindObjectOfType<Spawner>().asteroidCount.ToString();
 	}
@@ -37,6 +64,7 @@ public class UI : MonoBehaviour {
 		creditsText.text = player.credits.ToString("F2");
 		gameOverScore.text = player.credits.ToString();
 		frameRateCooldown -= Time.deltaTime;
+
 		if(frameRateCooldown < 0) {
 			frameRate.text = (Time.frameCount / Time.time).ToString("F2") + " /s";
 			frameRateCooldown = 1.0f;
@@ -90,4 +118,6 @@ public class UI : MonoBehaviour {
 			GameObject.Find("toolsButton").GetComponentInChildren<Text>().text = "Enabled";
 		}
 	}
+
+	
 }

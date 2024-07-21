@@ -110,11 +110,11 @@ public class PlayerControls : MonoBehaviour {
 			if (docked && Input.GetKey(KeyCode.F)) {
 				shop.SetActive(true);
 				shop.GetComponent<Shop>().setUpShop();
+				UI.DockToggle();
 				Time.timeScale = 0;
 			}
 
 			if(Input.GetKeyDown(KeyCode.R)) {
-
 				
 				if(!GetComponent<PlayerRadar>().searching) {
 					FindObjectOfType<AudioManager>().Play("Radar");
@@ -135,9 +135,8 @@ public class PlayerControls : MonoBehaviour {
 					GetComponent<PlayerRadar>().closestPlanets[1].GetComponent<Planet>().arrow.SetActive(false);
 					GetComponent<PlayerRadar>().closestPlanets[2].GetComponent<Planet>().arrow.SetActive(false);
 				}
-				GetComponent<PlayerRadar>().searching = !GetComponent<PlayerRadar>().searching;//flip state
 
-				
+				GetComponent<PlayerRadar>().searching = !GetComponent<PlayerRadar>().searching;//flip state
 			}
 
 			

@@ -9,6 +9,8 @@ public class Shop : MonoBehaviour {
     public PlayerInteractions playerInteractions;
     public Planet planet;
 
+    public UI HUD;
+
     public GameObject planetIcon;
     public Text planetName;
 
@@ -155,6 +157,7 @@ public class Shop : MonoBehaviour {
     public void Launch() {
         Time.timeScale = 1;
         gameObject.SetActive(false);
+        HUD.DockToggle();
     }
 
     public void setUpShop() {
