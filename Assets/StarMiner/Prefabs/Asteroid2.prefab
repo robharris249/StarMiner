@@ -141,7 +141,7 @@ MonoBehaviour:
   Shattered: {fileID: 1814964338168342, guid: cd2f9259c5c56054eb57965d14c6f0c8, type: 3}
   Iron: {fileID: 1417846891466788, guid: fdf00c822c4479f429b2ab1f954547a4, type: 3}
   Gold: {fileID: 1003751002376090, guid: 93a3f1208a09b02499db3c68816cc097, type: 3}
-  Diamond: {fileID: 1898319199122514, guid: c1e8533ba7b5c244882fe06fa16d13e5, type: 3}
+  Diamond: {fileID: 2780607886057860927, guid: d4dc26dc09d6bf74ca4ccd17816e96fa, type: 3}
   mysteriousCrystal: {fileID: 621068689645952095, guid: a413ccac81d959d4ca3f90b8e362b084,
     type: 3}
   Unknown: {fileID: 762468676085969173, guid: afe5ad678f98af14a96dac7c69123dd9, type: 3}

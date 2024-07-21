@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1614243641758546857}
   - component: {fileID: 657652609486293551}
   m_Layer: 0
-  m_Name: Crystal2
+  m_Name: CrystalAnimated
   m_TagString: mysterousCrystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
