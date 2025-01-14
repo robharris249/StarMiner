@@ -10,7 +10,6 @@ public class EnemyLaser : MonoBehaviour {
 	void Start() {
 		lifeTimer = 0.75f;
 		Rigidbody2D playerRB = GameObject.Find("PlayerOne").GetComponent<Rigidbody2D>();
-		Vector3 playerVelocity = playerRB.velocity;
 		GetComponent<Rigidbody2D>().AddForce(transform.up * 18f, ForceMode2D.Impulse);
 	}
 
@@ -43,6 +42,5 @@ public class EnemyLaser : MonoBehaviour {
 		if (lifeTimer <= 0) {
 			Destroy(gameObject);
 		}
-
 	}
 }

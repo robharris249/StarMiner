@@ -78,7 +78,6 @@ public class Asteroid : MonoBehaviour {
 				FindObjectOfType<AudioManager>().Play("AsteroidHit");
 			}
 		}
-		//TODO BigLaser
 		else if (collision.collider.tag == "BigLaser") {
 			health -= 50;
 			

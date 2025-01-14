@@ -16,7 +16,6 @@ public class Mineral : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision) {
 
-
 		if(collision.tag == "Player") {
 			if (player.isCargoFull()) {
 				GameObject text = Instantiate(cargoFullText, this.transform.position + offset, Quaternion.identity);
