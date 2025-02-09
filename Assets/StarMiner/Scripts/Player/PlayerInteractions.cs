@@ -23,7 +23,8 @@ public class PlayerInteractions : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
-		foreach (GameObject shieldEffect in shieldEffects.ToList()) {
+        //recreate shieldEffects list with non-null GameObjects
+        foreach (GameObject shieldEffect in shieldEffects.ToList()) {
 			shieldEffects = shieldEffects.Where(i => i != null).ToList();
 		}
 
@@ -36,7 +37,6 @@ public class PlayerInteractions : MonoBehaviour {
 
 		if(collision.collider.tag == "Asteroid" || collision.collider.tag == "EnemyLaser") {
 			Vector3 contactPoint = collision.contacts[0].point;
-			Vector3 origin = transform.position;
 
 			Vector3 vectorToTarget = contactPoint - transform.position;
 			float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;

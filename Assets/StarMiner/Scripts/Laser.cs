@@ -45,10 +45,12 @@ public class Laser : MonoBehaviour {
 	private void hitAnimation(Collision2D collision) {
 		if (gameObject.tag == "SmallLaser") {
 			GameObject effect = Instantiate(smallLaserHit, collision.contacts[0].point, this.transform.rotation);
+			effect.transform.parent = collision.transform;
 			Destroy(effect, 0.5f);
 		} else if (gameObject.tag == "BigLaser") {
 			GameObject effect = Instantiate(bigLaserHit, collision.contacts[0].point, this.transform.rotation);
-			Destroy(effect, 0.5f);
+            effect.transform.parent = collision.transform;
+            Destroy(effect, 0.5f);
 		}
 	}
 }

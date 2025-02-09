@@ -21,7 +21,6 @@ public class PlayerRadar : MonoBehaviour {
                 updateTargetsTimer = 10.0f;
             }
 
-            
             RadarPing();
         }
     }

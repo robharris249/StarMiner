@@ -19,13 +19,6 @@ public class EnemyShoot : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		distance = Vector3.Distance(transform.position, player.transform.position);
-
-		if (distance < 5 && laserCooldown == 0) {
-			shoot();
-			laserCooldown = 2;
-			FindObjectOfType<AudioManager>().Play("EnemyShoot");
-		}
 
 		laserCooldown -= Time.deltaTime;
 		if (laserCooldown < 0) {
@@ -33,7 +26,11 @@ public class EnemyShoot : MonoBehaviour {
 		}
 	}
 
-	void shoot() {
-		Instantiate(enemyLaser, firePoint.position, firePoint.rotation);
-	}
+	public void shoot() {
+        if (laserCooldown == 0) {
+            Instantiate(enemyLaser, firePoint.position, firePoint.rotation);
+            laserCooldown = 2;
+            FindObjectOfType<AudioManager>().Play("EnemyShoot");
+        }
+    }
 }
